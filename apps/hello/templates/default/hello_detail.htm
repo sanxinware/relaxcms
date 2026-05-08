@@ -1,0 +1,29 @@
+﻿
+<rdoc:include file="tabhead.htm" />
+
+        <div class="tabbable-line">
+            <ul class="nav nav-tabs ">
+                <li class="$navtab0[active]">
+                    <a href="#tab_1_1" data-toggle="tab" data-id="$navtab0[id]"> 详细 </a>
+                </li>
+                <li class="$navtab1[active]">
+                    <a href="#tab_1_2" data-toggle="tab" data-id="$navtab1[id]"> 更多 </a>
+                </li>
+            </ul>
+            
+            <div class="tab-content">
+                <div class="tab-pane $navtab0[in]" id="tab_1_1">
+                    <rdoc:include file="detail.htm" />
+                </div>
+
+                <div class="tab-pane $navtab1[in]" id="tab_1_2">
+                    <rdoc:include type="module" name="hello" />
+                </div>
+            </div>
+       </div>
+<script type="text/javascript">
+jQuery(document).ready(function() {       
+});
+</script>
+<rdoc:include file="tabfoot.htm" />
+

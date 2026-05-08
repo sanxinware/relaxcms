@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html  dir="ltr">
+
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>RelaxCMS简介</title>
+        <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon">
+        <link rel="apple-touch-icon-precomposed" href="images/apple-touch-icon.png">
+
+        <link href="../../static/css/man.css" rel="stylesheet" >
+        <script src="../../static/js/man.js"></script>
+        
+        <meta name="generator" content="pandoc-man" />
+                <meta name="author" content="柑桔" />
+                        <title>RelaxCMS简介</title>
+        <style type="text/css">code{white-space: pre;}</style>
+                
+                                        </head>
+
+     <body class="page-header-fixed page-sidebar-fixed  page-sidebar-closed-hide-logo page-container-bg-solid">
+        <!-- BEGIN HEADER -->
+        <div class="page-header navbar navbar-fixed-top">
+            <!-- BEGIN HEADER INNER -->
+            <div class="page-header-inner ">
+                <!-- BEGIN LOGO -->
+                <div class="page-logo">
+                    <a href="index.html">
+                        <img src="../../static/img/logo-default3.png" alt="logo" class="logo-default" /> </a>
+                    <div class="menu-toggler sidebar-toggler">
+                        <!-- DOC: Remove the above "hide" to enable the sidebar toggler button on header -->
+                    </div>
+                </div>
+                <!-- END LOGO -->
+                <!-- BEGIN RESPONSIVE MENU TOGGLER -->
+                <a href="javascript:;" class="menu-toggler responsive-toggler" data-toggle="collapse" data-target=".navbar-collapse"> </a>
+                <!-- END RESPONSIVE MENU TOGGLER -->
+                
+                <!-- BEGIN PAGE TOP -->
+                <div class="page-top">                   
+                    <!-- BEGIN TOP NAVIGATION MENU -->
+                    <div class="top-menu">
+                       
+                    </div>
+                    <!-- END TOP NAVIGATION MENU -->
+                </div>
+                <!-- END PAGE TOP -->
+            </div>
+            <!-- END HEADER INNER -->
+        </div>
+        
+        <!-- BEGIN HEADER & CONTENT DIVIDER -->
+        <div class="clearfix"> </div>
+        <!-- END HEADER & CONTENT DIVIDER -->
+        <!-- BEGIN CONTAINER -->
+        <div class="page-container">
+            <!-- BEGIN SIDEBAR -->
+            <div class="page-sidebar-wrapper">
+                <!-- DOC: Set data-auto-scroll="false" to disable the sidebar from auto scrolling/focusing -->
+                <!-- DOC: Change data-auto-speed="200" to adjust the sub menu slide up/down speed -->
+                <div class="page-sidebar navbar-collapse collapse">
+                    <!--主菜单 -->
+<ul class="page-sidebar-menu  page-header-fixed page-sidebar-menu-compact" data-keep-expanded="true" data-auto-scroll="false" data-slide-speed="200">
+                        
+
+
+<li class="nav-item active open ">
+	<a href="javascript:;" class="nav-link nav-toggle">
+	    <i class="icon-folder"></i>
+	    <span class="title">操作手册</span>
+	    <span class="arrow open"></span>
+	</a>
+	
+	<!-- 子菜单 -->
+	<ul class="sub-menu">		
+		
+		<li id="aboutus" class="nav-item active open ">
+	        <a href="/docs/admin/aboutus.html" class="nav-link "  >
+	        	<i class="icon-item"></i> 
+	            <span class="title">RelaxCMS简介</span>
+	        </a>
+	    </li>
+		
+		<li id="user" class="nav-item  ">
+	        <a href="/docs/admin/user.html" class="nav-link "  >
+	        	<i class="icon-item"></i> 
+	            <span class="title">操作员手册</span>
+	        </a>
+	    </li>
+		
+		<li id="system" class="nav-item  ">
+	        <a href="/docs/admin/system.html" class="nav-link "  >
+	        	<i class="icon-item"></i> 
+	            <span class="title">系统管理员手册</span>
+	        </a>
+	    </li>
+		
+		<li id="api" class="nav-item  ">
+	        <a href="/docs/admin/api.html" class="nav-link "  >
+	        	<i class="icon-item"></i> 
+	            <span class="title">API手册</span>
+	        </a>
+	    </li>
+		
+	</ul>
+</li>
+
+
+</ul>
+                </div>
+                <!-- END SIDEBAR -->
+            </div>
+            <!-- END SIDEBAR -->
+            <!-- BEGIN CONTENT -->
+            <div class="page-content-wrapper">
+                <!-- BEGIN CONTENT BODY -->
+                <div class="page-content">
+                    <!-- BEGIN PAGE HEADER-->
+                  
+                    <h1 class="page-title"> RelaxCMS简介
+                        <small>版本：0.11.7 / 更新时间：2025.10.21</small>
+                    </h1>
+                    
+                    <div class="row">
+                        <div class="col-md-10">                           
+                            
+                    		<div class="man-body">
+                    				<h2 id="前言">前言</h2>
+<p>本文主要介绍系统架构、系统特性、开发环境、运行环境、构建编译、模板制作。主要阅读对象为二次开发人员。</p>
+<p><em>注1：本文档内容依据版本变化将会即时修订，当手册描述与软件实现不一致时，请下载或登录系统查看与软件版本一致的最新手册。</em></p>
+<h2 id="系统简介">系统简介</h2>
+<p>RelaxCMS（简称：RC）是一款基于PHP语言编写开发的轻量级内容管理系统。系统采用面向对象程序设计思想与CMT（组件Component、模型Model、模板Template）设计模式设计实现，能使数据、控制与显示分离，代码与功能模块复用性强，逻辑结构清晰，极大提高了系统的可复用性，易维护性与可扩展性。该系统主要适用于构建WEB应用系统，如：电商平台、WEB管控、WEB门户及后端API接口服务等。</p>
+<h1 id="系统架构">系统架构</h1>
+<div class="figure">
+<img src="img/arch.png" alt="系统架构" />
+<p class="caption">系统架构</p>
+</div>
+<h1 id="系统特点">系统特点</h1>
+<ul>
+<li><p>跨平台</p>
+<p>系统主要使用PHP语言编定，支持：LINUX、WINDOWS等PHP可以部署的操作系统平台。</p></li>
+<li><p>多数据库</p>
+<p>支持：PDO/MYSQL/SQLITE/POSTGRESQL/MONGODB/MSSQL/ORACLE</p></li>
+<li><p>多语言</p>
+<p>支持多语种国际化：中文（简、繁）、英语等</p></li>
+<li><p>可扩展</p>
+<p>支持第三方应用扩展安装。</p></li>
+<li><p>多模板</p>
+<p>支持多模板布局</p></li>
+<li><p>多主题</p>
+<p>支持多主题风格</p></li>
+</ul>
+<h1 id="开发环境">开发环境</h1>
+<pre><code>PHP/MYSQL</code></pre>
+<h1 id="运行环境">运行环境</h1>
+<pre><code>类LAPM集成环境，如LAPM、CRAB; 推荐使用CRAB搭建服务器环境。</code></pre>
+<h1 id="源码下载">源码下载</h1>
+<ul>
+<li><p>RELAXCMS 官网</p>
+<pre><code>https://www.relaxcms.com</code></pre></li>
+<li><p>RELAXCMS 官网下载</p>
+<pre><code>svn co https://www.relaxcms.com/svn/relaxcms                </code></pre></li>
+<li><p>GITHUB下载</p>
+<pre><code>git clone https://github.com/relaxcms/relaxcms.git</code></pre></li>
+</ul>
+<h1 id="在线演示">在线演示</h1>
+<pre><code>    https://demo.relaxcms.com   
+    </code></pre>
+<h1 id="安装与更新">安装与更新</h1>
+<h2 id="一键安装">一键安装</h2>
+<p>– 在LINUX环境下一键安装（CRAB+RC），推荐使用Ubuntu 16.04/18.04 Server LTS</p>
+<pre><code>    if [ -f /usr/bin/curl ];then curl -sSLO https://www.relaxcms.com/install/install.sh;else wget -O install.sh https://www.relaxcms.com/install/install.sh;fi;bash install.sh
+    </code></pre>
+<p>– 注：默认安装RelaxCMS官网发布的最新稳定版本</p>
+<h2 id="一键更新">一键更新</h2>
+<p>– 一键更新RC适用于RC已安装好，想把RC升级到更新版本，不跨版本，如0.9.0.0升级0.9.0.123，可以在RC的安装目录下，如：/opt/crab/var/www执行以下一键更新RC命令：</p>
+<pre><code>    if [ -f /usr/bin/curl ];then curl -sSLO https://www.relaxcms.com/install/update.sh;else wget -O update.sh https://www.relaxcms.com/install/update.sh;fi;bash update.sh
+    </code></pre>
+<p>– 注：一键更新RC,须在RC部署目录下执行</p>
+<h2 id="一键升级">一键升级</h2>
+<p>– 一键升级RC适用于RC已安装好，想把RC升级到更新版本，可跨版本，如0.9.0.0升级0.10.0.123，可以在RC的安装目录下，如：/opt/crab/var/www执行以下一键升级RC命令：</p>
+<pre><code>    if [ -f /usr/bin/curl ];then curl -sSLO https://www.relaxcms.com/install/upgrade.sh;else wget -O upgrade.sh https://www.relaxcms.com/install/upgrade.sh;fi;bash upgrade.sh</code></pre>
+<p>– 注：一键升级RC,须在RC部署目录下执行 – 注：等同RC的安装目录/opt/crab/var/www/bin下执行: ./upgrade.sh (版本：0.9.0以上)</p>
+<h2 id="下载安装">下载安装</h2>
+<p>– 从RelaxCMS官网下载RelaxCMS 最新版本</p>
+<pre><code>RelaxCMS版本：relaxcms-&lt;VERSION&gt;.tar.gz，下载后，解压安装，./setup.sh命令安装。</code></pre>
+<h1 id="源码目录结构说明">源码目录结构说明</h1>
+<pre><code>src/
+- apps 应用目录
+  |
+  |- admin                 
+       |- components       应用组件
+       |- database         应用数据库 
+       |- docs             应用文档
+       |- i18n             应用国际化配置
+       |- includes         应用菜单
+       |- models           应用模型
+       |- templates        应用模板
+       |- config.php       应用配置
+       |_ admin.php        应用类，名称格式：名称+.php，必须从CApplication派生
+       
+- docs 文档
+- lib  库(核心架构类库）
+  |- classes 类
+  |- model 内置模型
+  |- modules 内置模块
+  |- templates 内置模板     
+- modules 扩展模块
+- templates 扩展模板
+- public WEB公开及静态文件，通用DocumentRoot设置为此目录
+- supports 第三方库
+- cache 缓存
+- config 配置
+- data 数据</code></pre>
+                            </div>
+                            
+                    	</div>
+                        <div class="col-md-2">
+                            <div class="portlet light fixed" style="right:20px;">
+                                <div class="portlet-title">
+                                    <div class="actions">
+                                        
+                                <a href="/docs/admin/aboutus.pdf" class="btn btn-default" > 下载
+                                    <i class="fa fa-file-pdf-o"></i>
+                                </a>
+
+                                    </div>
+                                </div>
+                                <div class="portlet-body">
+                                    <div class="man-sidemenu" >
+                                                                                    <ul>
+                                            <li><a href="#前言">前言</a></li>
+                                            <li><a href="#系统简介">系统简介</a></li>
+                                            <li><a href="#系统架构">系统架构</a></li>
+                                            <li><a href="#系统特点">系统特点</a></li>
+                                            <li><a href="#开发环境">开发环境</a></li>
+                                            <li><a href="#运行环境">运行环境</a></li>
+                                            <li><a href="#源码下载">源码下载</a></li>
+                                            <li><a href="#在线演示">在线演示</a></li>
+                                            <li><a href="#安装与更新">安装与更新</a><ul>
+                                            <li><a href="#一键安装">一键安装</a></li>
+                                            <li><a href="#一键更新">一键更新</a></li>
+                                            <li><a href="#一键升级">一键升级</a></li>
+                                            <li><a href="#下载安装">下载安装</a></li>
+                                            </ul></li>
+                                            <li><a href="#源码目录结构说明">源码目录结构说明</a></li>
+                                            </ul>
+                                                                            </div>
+                                </div>
+                            </div>                    		 
+                    	</div>
+                    </row>
+                    	
+                    </div>
+                </div>
+                <!-- END CONTENT BODY -->
+            </div>
+            <!-- END CONTENT -->
+
+        </div>
+        <!-- END CONTAINER -->
+        <!-- BEGIN FOOTER -->
+        <div class="page-footer">
+            <div class="page-footer-inner"> 2024 &copy; <a href="https://www.relaxcms.com" target="_blank">RC</a>
+                <div class="scroll-to-top">
+                    <i class="icon-arrow-up"></i>
+                </div>
+        </div>
+                <!-- END FOOTER -->
+    <script lang="javascript">
+        jQuery(document).ready(function(){
+            jQuery('pre').addClass('prettyprint')
+            prettyPrint();
+
+        });
+    </script>
+    </body>
+</html>

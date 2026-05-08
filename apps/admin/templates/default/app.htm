@@ -1,0 +1,102 @@
+<rdoc:include file="tabhead.htm" />
+<div class="tabbable-line">
+  <ul class="nav nav-tabs">
+    <li class="$navtab0[active]">
+      <a href="#tab_1_0" data-toggle="tab" data-id="$navtab0[id]">
+      本地 </a>
+    </li>
+
+    <li class="$navtab1[active]">
+      <a href="#tab_1_1" data-toggle="tab" data-id="$navtab1[id]">
+      远程</a>
+    </li>
+  </ul>
+</div>
+
+<!-- BEGIN TAB CONENT -->
+<div class="tab-content">
+  <div class="tab-pane fade $navtab0[in]" id="tab_1_0">
+      <rdoc:include type="module" name="table" modname="local_app" vmask="5" />
+  </div>
+  <div class="tab-pane fade $navtab1[in] " id="tab_1_1">
+    <rdoc:include type="module" name="table" modname="remote_app" vmask="5"  />
+  </div>
+</div>
+
+<script type="text/javascript">
+  jQuery(document).ready(function() {
+    //console.log(listview_app);
+
+    
+    var btnInstallall = $("#{$table_id}installall");
+
+    //按钮可用与否
+    btnInstallall.prop('disabled', true);
+    var baseurl = '$_base';
+    var actionModname = '';
+    
+    //onSelect
+    listview_local_app.on('onSelect', function(rows){
+        var len = rows.length;
+        if (len == 0) {
+            btnInstallall.prop('disabled', true);
+          } else {
+            btnInstallall.prop('disabled', false);              
+          }
+          actionModname = 'local_app';
+    });
+
+    listview_remote_app.on('onSelect', function(rows){
+        var len = rows.length;
+        if (len == 0) {
+          btnInstallall.prop('disabled', true);
+        } else {
+          btnInstallall.prop('disabled', false);              
+        }
+        //app
+        actionModname = 'remote_app';
+    });
+
+
+    btnInstallall.on('click', function(e) {
+      e.preventDefault();
+      if (!actionModname)
+        return false;
+
+      var el = $(this);
+      var url = baseurl + '/installall?modname='+actionModname;
+      el.attr('href', url);
+      if (actionModname == 'local_app') {
+        var res = listview_local_app.tmilink(el);	    
+      } else {
+        var res = listview_remote_app.tmilink(el);	    
+      }
+    });
+    
+    $("#{$table_id}cleancache").on('click', function(e){
+    
+                bootbox.confirm("确认清理吗？", function(result) {
+                        if (result) {
+                           $.post("$_base/cleancache", function(res) {
+                                if (res.status == 0) {
+                                   rui.showStatus(res);
+                                   rui.refresh(1);                                    
+                                } else {
+                                     rui.showStatus(res);
+                                }
+                            })
+                            .fail(function(res) { 
+                                  rui.showStatus(res);
+                            });
+                        }
+                    });
+                    
+    
+    });
+   
+
+    
+  });
+</script>
+
+<rdoc:include file="tabfoot.htm" />

@@ -1,0 +1,70 @@
+﻿
+<form name="form" method="post" onkeypress="return event.keyCode != 13;">
+ <input type="hidden" name="pretask" value="modelselector" class="form-filter"/>
+ <input type="hidden" name="modname" value="$modname" class="form-filter"/>
+    
+<div class="portlet box default" id='table_wrapper_$table_id'>
+
+<div class="portlet-body" >
+
+<div class="listview lv" id="listview$table_id"
+    data-singleselect="$singleselect" 
+    data-url="$_base"
+    data-col="6"
+    data-dlg="$dlg"
+    data-modname="$modname"
+    data-keyword="$_keyword"
+    data-treeview="$treeview"
+    data-defaultviewtype="$defaultviewtype"
+    data-vmask="$vmask"
+    data-nooptmenu="1"
+	>
+
+	<template name="toolbar">
+	
+	<div id="toolbar$table_id" class="form-inline searchbar">
+<!--# foreach($sfdb as $key=>$v) { if (empty($v['searchinput'])) continue; #-->
+    <div class="form-group">
+            $v[searchinput]
+    </div>
+<!--# } #-->
+
+<!--# foreach($sfdb as $key=>$v) { if (($v['searchable'] & 2) == 2) { #-->
+    <div class="form-group">
+            $v[input]
+    </div>
+<!--# }} #-->
+    <input type="button" class="btn btn-primary filter-field btnSearch" id="query$table_id" value="搜索"/>
+    
+    
+</div> 
+
+		
+	</template>
+</div>
+
+
+</div>
+</div>
+
+</form>
+
+
+<script type="text/javascript">
+jQuery(document).ready(function() {
+    if ($.fn.bupload) {        
+        $('.bupload').bupload({});
+    }
+    if (!$.fn.listview)
+        return false;
+    	
+    var lv = $("#listview$table_id");
+	var lvObj = new Listview(lv);
+    
+	//onSelect
+	lvObj.on('onSelect', function(rows){
+	    var len = rows.length;
+	    
+	});
+});	
+</script>

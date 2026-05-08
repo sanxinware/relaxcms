@@ -1,0 +1,30 @@
+<!--# if ($hasMsg) { #-->
+<li class="dropdown  dropdown-extended dropdown-notification" id="header_notification_bar">
+    <a href="javascript:;" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-close-others="true">
+        <i class="icon-bell"></i>
+        <!--# if ($total > 0) { #-->
+        <span class="badge badge-success"> $total </span>
+        <!--# } #-->
+    </a>
+    <ul class="dropdown-menu">
+        <li class="external">
+            <span class="bold">收到 $total 新消息</span>
+            <a href="$_basename/msg">全部</a>
+        </li>
+        <li>
+            <ul class="dropdown-menu-list scroller" style="height: 250px;" data-handle-color="#637283">
+                <!--# foreach($udb as $key=>$v) { #-->
+                <li>
+                    <a href="$_basename/my_msg?id=$v[id]" class="msgitem">
+                        <span class="time">$v[_ctimelong]</span>
+                        <span class="details">
+                            $v[_icon] $v[name] </span>
+                    </a>
+                </li>
+                <!--# } #-->
+                
+            </ul>
+        </li>
+    </ul>
+</li>
+<!--# } #-->

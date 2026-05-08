@@ -1,0 +1,183 @@
+<rdoc:include file="head.htm" />
+
+<style type="text/css">
+    
+.portlet .portlet-title .caption i {
+    float: unset !important;
+}
+
+ thead th .sortable {
+    cursor: pointer;
+    background-position: right;
+    background-repeat: no-repeat;
+    padding-right: 30px;
+}
+
+.table thead th .both {
+  background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABMAAAATCAQAAADYWf5HAAAAkElEQVQoz7X QMQ5AQBCF4dWQSJxC5wwax1Cq1e7BAdxD5SL+Tq/QCM1oNiJidwox0355mXnG/DrEtIQ6azioNZQxI0ykPhTQIwhCR+BmBYtlK7kLJYwWCcJA9M4qdrZrd8pPjZWPtOqdRQy320YSV17OatFC4euts6z39GYMKRPCTKY9UnPQ6P+GtMRfGtPnBCiqhAeJPmkqAAAAAElFTkSuQmCC");
+}
+.table thead th .asc {
+  background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABMAAAATCAYAAAByUDbMAAAAZ0lEQVQ4y2NgGLKgquEuFxBPAGI2ahhWCsS/gDibUoO0gPgxEP8H4ttArEyuQYxAPBdqEAxPBImTY5gjEL9DM+wTENuQahAvEO9DMwiGdwAxOymGJQLxTyD+jgWDxCMZRsEoGAVoAADeemwtPcZI2wAAAABJRU5ErkJggg==");
+}
+.table thead th .desc {
+  background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABMAAAATCAYAAAByUDbMAAAAZUlEQVQ4y2NgGAWjYBSggaqGu5FA/BOIv2PBIPFEUgxjB+IdQPwfC94HxLykus4GiD+hGfQOiB3J8SojEE9EM2wuSJzcsFMG4ttQgx4DsRalkZENxL+AuJQaMcsGxBOAmGvopk8AVz1sLZgg0bsAAAAASUVORK5CYII= ");
+}
+
+</style>
+
+<div class="portlet box default" id='table_wrapper_$table_id'>
+<div class="portlet-title">
+    <div class="caption">
+        <i class="fa fa-globe"></i><a href="$mbaseurl">$mi18n[modelname]</a> $nav 
+    </div>
+    <div class="actions">
+ 
+        <div class="btn-group">
+                        <a class="btn btn-primary btn-sm refresh">
+                            <i class="fa fa-refresh"></i> @T[Refresh] </a> 
+                    </div>
+
+    </div>
+    
+</div>
+
+<div class="portlet-body" >
+        <form action="$mbaseurl" name="ruiform" id="form_$table_id">
+<div class="table-toolbar">
+    <div id="toolbar$table_id" class="form-inline searchbar">
+    <!--# foreach($sfdb as $key=>$v) { if (!$v['searchinput']) continue; #-->
+        <div class="form-group">
+                $v[searchinput]
+        </div>
+    <!--# } #-->
+
+    <!--# foreach($sfdb as $key=>$v) { if (($v['searchable'] & 2) == 2) { #-->
+        <div class="form-group">
+                $v[input]
+        </div>
+    <!--# }} #-->
+        <input type="submit" class="btn btn-primary filter-field btnSearch" id="query$table_id" value="搜索"/>
+        
+        <!--# foreach($requestparams as $key=>$v) { #-->
+        <input type="hidden" name="$key" value="$v" class="form-filter" id="param_$key" />
+        <!--# } #-->
+    </div> 
+</div>
+
+
+            <table class="table table-striped table-bordered table-hover " id="$table_id">
+                <thead>
+                <tr class="heading">
+                    <th width="40" >
+                        <input type="checkbox" value="1" class="group-checkable checkbox checkall" />
+                    </th>
+                    <!--# $nr_col = 1; foreach($fdb as $key=>$v) { if (!$v['show']) continue; $nr_col ++;   $_sortable = $v['sortable']?'sortable both':'';
+                        $_sortOrder = ($sortName == $key)?$sortOrder:''; #-->
+                    <th data-id="$key">
+                        <div class="th-inner $_sortable $_sortOrder ">{$v['title']}</div>
+                    </th>
+                    <!--# } #-->
+
+                </tr>
+                </thead>
+                <tbody>
+                <!--# foreach($tabledata as $key=>$v) { $id = $v[$pkey['name']]; 
+                    $treepid = $v['pid']?'treegrid-parent-'.$v['pid']:''; #-->        
+                <tr class="treegrid-$id $treepid" data-id="$id">
+                    <td> <input type="checkbox" name="params[{$v[$pkey['name']]}]" value="{$v[$pkey['name']]}" class="checkbox" /> </td>
+
+                    <!--# foreach($fdb as $k2=>$v2) { if (!$v2['show']) continue; $val = isset($v['_'.$k2])?$v['_'.$k2]:$v[$k2];  #-->
+                    <td title="$v[$k2]">
+                         $val
+                    </td>
+                    <!--# } #-->
+                    
+                    
+                </tr>
+                <!--# } #-->
+
+                
+                </tbody>
+                </table>
+        </form>
+</div>
+</div>
+
+<script type="text/javascript">
+      
+jQuery(document).ready(function() { 
+    var table = $('#$table_id');
+    var tableContainer = $("#table_wrapper_$table_id");
+
+    //sort
+    var allsortable = $('.sortable', table);
+    allsortable.on('click', function (e) {        
+        e.preventDefault();      
+        
+        var th = $(this).closest('th');
+        var sortName = th.attr('data-id');
+        var sortOrder = 'asc';
+        if ($(this).hasClass('asc')) {
+            sortOrder = 'desc';
+            allsortable.removeClass('asc');
+            $(this).addClass('desc')
+        } else {
+            sortOrder = 'asc';
+            allsortable.removeClass('desc');
+            $(this).addClass('asc')
+        }
+
+        rui.cookie('sortName',sortName);
+        rui.cookie('sortOrder',sortOrder);
+        
+        rui.reload();
+    });
+    
+          
+    /**
+     * 获得选中的数据，为一个对象数组
+     */
+    function getSelections() {
+        var nr = 0;
+        var id = 0;
+        var ids = [];   
+        
+        $('input[type="checkbox"]').each(function() {
+            if ($(this).is(':checked')) {
+                id = $(this).val();
+                ids.push(id);
+                nr ++;
+            }
+        });
+        
+        return ids;
+    }
+
+    $('.checkbox', table).on('click', function(e) {
+        var ids = getSelections();
+        if (ids.length == 0)
+            return false;
+
+        var url = '$mbaseurl';
+        var formData={ids:ids,"sbt":"$sbt"};
+        //
+        $.post(url, formData, function(res) {
+            closeWaiting();
+            if (res.status == 0) {                        
+               //rui.showTSuccess('操作成功.');
+               window.row = res.data;   
+            } else {
+                rui.showTError('操作失败:'+res.status);
+            }
+        })
+        .fail(function() { 
+            closeWaiting();
+            rui.showTError("系统错误");
+        });        
+             
+    });
+            
+
+});
+</script>
+<rdoc:include file="foot.htm" />

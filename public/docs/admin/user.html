@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html  dir="ltr">
+
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>操作员手册</title>
+        <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon">
+        <link rel="apple-touch-icon-precomposed" href="images/apple-touch-icon.png">
+
+        <link href="../../static/css/man.css" rel="stylesheet" >
+        <script src="../../static/js/man.js"></script>
+        
+        <meta name="generator" content="pandoc-man" />
+                <meta name="author" content="柑桔" />
+                        <title>操作员手册</title>
+        <style type="text/css">code{white-space: pre;}</style>
+                
+                                        </head>
+
+     <body class="page-header-fixed page-sidebar-fixed  page-sidebar-closed-hide-logo page-container-bg-solid">
+        <!-- BEGIN HEADER -->
+        <div class="page-header navbar navbar-fixed-top">
+            <!-- BEGIN HEADER INNER -->
+            <div class="page-header-inner ">
+                <!-- BEGIN LOGO -->
+                <div class="page-logo">
+                    <a href="index.html">
+                        <img src="../../static/img/logo-default3.png" alt="logo" class="logo-default" /> </a>
+                    <div class="menu-toggler sidebar-toggler">
+                        <!-- DOC: Remove the above "hide" to enable the sidebar toggler button on header -->
+                    </div>
+                </div>
+                <!-- END LOGO -->
+                <!-- BEGIN RESPONSIVE MENU TOGGLER -->
+                <a href="javascript:;" class="menu-toggler responsive-toggler" data-toggle="collapse" data-target=".navbar-collapse"> </a>
+                <!-- END RESPONSIVE MENU TOGGLER -->
+                
+                <!-- BEGIN PAGE TOP -->
+                <div class="page-top">                   
+                    <!-- BEGIN TOP NAVIGATION MENU -->
+                    <div class="top-menu">
+                       
+                    </div>
+                    <!-- END TOP NAVIGATION MENU -->
+                </div>
+                <!-- END PAGE TOP -->
+            </div>
+            <!-- END HEADER INNER -->
+        </div>
+        
+        <!-- BEGIN HEADER & CONTENT DIVIDER -->
+        <div class="clearfix"> </div>
+        <!-- END HEADER & CONTENT DIVIDER -->
+        <!-- BEGIN CONTAINER -->
+        <div class="page-container">
+            <!-- BEGIN SIDEBAR -->
+            <div class="page-sidebar-wrapper">
+                <!-- DOC: Set data-auto-scroll="false" to disable the sidebar from auto scrolling/focusing -->
+                <!-- DOC: Change data-auto-speed="200" to adjust the sub menu slide up/down speed -->
+                <div class="page-sidebar navbar-collapse collapse">
+                    <!--主菜单 -->
+<ul class="page-sidebar-menu  page-header-fixed page-sidebar-menu-compact" data-keep-expanded="true" data-auto-scroll="false" data-slide-speed="200">
+                        
+
+
+<li class="nav-item active open ">
+	<a href="javascript:;" class="nav-link nav-toggle">
+	    <i class="icon-folder"></i>
+	    <span class="title">操作手册</span>
+	    <span class="arrow open"></span>
+	</a>
+	
+	<!-- 子菜单 -->
+	<ul class="sub-menu">		
+		
+		<li id="aboutus" class="nav-item  ">
+	        <a href="/docs/admin/aboutus.html" class="nav-link "  >
+	        	<i class="icon-item"></i> 
+	            <span class="title">RelaxCMS简介</span>
+	        </a>
+	    </li>
+		
+		<li id="user" class="nav-item active open ">
+	        <a href="/docs/admin/user.html" class="nav-link "  >
+	        	<i class="icon-item"></i> 
+	            <span class="title">操作员手册</span>
+	        </a>
+	    </li>
+		
+		<li id="system" class="nav-item  ">
+	        <a href="/docs/admin/system.html" class="nav-link "  >
+	        	<i class="icon-item"></i> 
+	            <span class="title">系统管理员手册</span>
+	        </a>
+	    </li>
+		
+		<li id="api" class="nav-item  ">
+	        <a href="/docs/admin/api.html" class="nav-link "  >
+	        	<i class="icon-item"></i> 
+	            <span class="title">API手册</span>
+	        </a>
+	    </li>
+		
+	</ul>
+</li>
+
+
+</ul>
+                </div>
+                <!-- END SIDEBAR -->
+            </div>
+            <!-- END SIDEBAR -->
+            <!-- BEGIN CONTENT -->
+            <div class="page-content-wrapper">
+                <!-- BEGIN CONTENT BODY -->
+                <div class="page-content">
+                    <!-- BEGIN PAGE HEADER-->
+                  
+                    <h1 class="page-title"> 操作员手册
+                        <small>版本：0.11.3 / 日期：2025.4.23</small>
+                    </h1>
+                    
+                    <div class="row">
+                        <div class="col-md-10">                           
+                            
+                    		<div class="man-body">
+                    				<h2 id="前言">前言</h2>
+<p>本手册主要介绍操作员角色使用本系统常见操作。</p>
+<p><em>注1：本手册内容依据版本变化将会即时修订，当手册描述与软件实现不一致时，请下载或登录系统查看与软件版本一致的最新手册。</em></p>
+<p><em>注2：WEB浏览器版本必须支持H5，否则部份功能将无法使用，推存使用Firefox 60.0以上版本 </em></p>
+<h2 id="登录">登录</h2>
+<div class="figure">
+<img src="img/login.png" alt="登录" />
+<p class="caption">登录</p>
+</div>
+<ol style="list-style-type: decimal">
+<li><p>验证码 验证码主要为防止暴力破解帐户，安全环境下（内网），管理员可以登录后端关闭此项功能，但不建议这样做。</p></li>
+<li>记忆登录</li>
+</ol>
+<ul>
+<li>打勾后系统记录本次登录系统所使用的身份认证，再次访问本系统时，不需要再认证直接登录。</li>
+<li>在公用电脑使用本系统且不要打勾</li>
+<li>对于保密性要求比较高的应用，管理员可以登录后台，关闭此功能功，使操作人员每次都强制通过密码认证登录。</li>
+<li>通过点击：顶层导航|用户菜单|退出，可清除记忆登录。</li>
+</ul>
+<ol start="3" style="list-style-type: decimal">
+<li>登录密码加密传输，具有防窃听非法盗取。</li>
+<li><strong>登录页背景图片设计为自动渐变切换，管理员可以登录后端更换适合不同应用的背影图片。</strong></li>
+</ol>
+<h2 id="我的面板">我的面板</h2>
+<div class="figure">
+<img src="img/my_main.png" alt="我的面板" />
+<p class="caption">我的面板</p>
+</div>
+<ol style="list-style-type: decimal">
+<li>LOGO区</li>
+</ol>
+<ul>
+<li>(1)LOGO图标，大小为:160*68px，格式：PNG, 管理员可以通过系统配置来更换此LOGO，以适应不同应用系统定制需求。</li>
+<li>(2)折叠菜单开关按钮，通过此菜单可以开启折叠左栏菜单。</li>
+</ul>
+<ol start="2" style="list-style-type: decimal">
+<li>顶导航区</li>
+</ol>
+<ul>
+<li>(3)点击“首页”可以跳转到前端首页</li>
+<li>(4)下拉菜单项记录最近操作，点击可快速回到上次操作</li>
+<li>(5)显示当前服务器时间</li>
+<li>(6)语言栏：可以切换系统支持语言界面，默认支持简体中文与英语。</li>
+<li>(7)当前登录用户头像，可以通过“我的帐户”来修改。</li>
+<li>(8)登录帐户菜单栏，包括：“个人信息”、修改密码等菜单项。</li>
+</ul>
+<ol start="3" style="list-style-type: decimal">
+<li>左侧栏导航区</li>
+</ol>
+<ul>
+<li>(11)按登录帐户权限以树形菜单形式组织左侧栏导航。</li>
+</ul>
+<ol start="4" style="list-style-type: decimal">
+<li>主窗口</li>
+</ol>
+<ul>
+<li>(9)显示页面当前位置，如：“我的面板”</li>
+<li>(10)显示具体展现内容，如：我的文件监控信息。</li>
+</ul>
+<h1 id="我的存储空间">我的存储空间</h1>
+<div class="figure">
+<img src="img/my_storage.png" alt="我的存储空间" />
+<p class="caption">我的存储空间</p>
+</div>
+<ol style="list-style-type: decimal">
+<li>默认存储与WEB储空间共享。</li>
+</ol>
+<h1 id="我的文件">我的文件</h1>
+<p><img src="img/my_file.png" alt="我的文件" /> - 本栏目主要实现文件上传，列表分页显示当前登录帐户上传的所有文件，选中单个文件进行编辑、下载等操作，也可以多选后进行批量操作等。 - 文件构织形式采用树型目录。</p>
+<h2 id="列表">列表</h2>
+<div class="figure">
+<img src="img/my_file_list1.png" alt="文件列表" />
+<p class="caption">文件列表</p>
+</div>
+<ol style="list-style-type: decimal">
+<li>支持多视图：“详细”、“小图标”、“大图标”、“图文”视图展示。</li>
+<li>支持按类型、状态、名称查询过滤。</li>
+<li>支持按指定字段排序。</li>
+<li>支持单选批量选中。</li>
+<li>支持图片视频格式幻灯片预览。</li>
+</ol>
+<div class="figure">
+<img src="img/my_file_list2.png" alt="文件列表幻灯片预览" />
+<p class="caption">文件列表幻灯片预览</p>
+</div>
+<ol start="6" style="list-style-type: decimal">
+<li>支持操作上下文菜单操作</li>
+</ol>
+<div class="figure">
+<img src="img/my_file_list3.png" alt="文件列表上下文菜单" />
+<p class="caption">文件列表上下文菜单</p>
+</div>
+<h2 id="上传">上传</h2>
+<ul>
+<li>点击“上传” 选择一个或多个文件实现上传。</li>
+<li>上传文件类型限制：“gif|jpe?g|png|doc|docx|xls|ppt|pptx|xlsx|pdf|txt|zip|tar|gz|bz2|lz| mp3|mp4|flv|avi|mpeg|ogg|mkv|m4a|rm|rmvb”</li>
+<li>上传文件存储在当前登录帐户所分配的存储设备上，未分配设备时，则默认存储在当前服务器上。</li>
+<li>上传文件默认当前目录，支持用户创建自定义目录。</li>
+<li>上传的视频类文件系统自动生成视频文件截图,非H5（H264）可播放格式，后端服务将自动产生H5转码视频文件。</li>
+</ul>
+<div class="figure">
+<img src="img/my_file3.png" alt="自动截图点播弹出播放" />
+<p class="caption">自动截图点播弹出播放</p>
+</div>
+<div class="figure">
+<img src="img/my_file4.png" alt="自动转码截图" />
+<p class="caption">自动转码截图</p>
+</div>
+<h2 id="转码">转码</h2>
+<div class="figure">
+<img src="img/my_file5.png" alt="自动转码截图" />
+<p class="caption">自动转码截图</p>
+</div>
+<ul>
+<li>视频类文件上传后，后台服务自动开启转码服务，把大多H5不能直接播放的格式转换为能播的格式。</li>
+<li>视频类文件需要转码时，初始状态为：“待转码”，转码服务启动后，状态切换到：“转码中”，完成后，切换到：“已转码”。</li>
+<li>支持转码格式：FLV|MPEG|MPEG2|M2P|AVI|RMVB|MKV</li>
+<li>转码后点击弹出H5播放</li>
+</ul>
+<h2 id="创建目录">创建目录</h2>
+<div class="figure">
+<img src="img/my_file2.png" alt="创建目录" />
+<p class="caption">创建目录</p>
+</div>
+<ul>
+<li>点击下拉菜单“创建目录”，输入目录名称，点击“保存”完成目录创建。</li>
+</ul>
+<h2 id="创建空文件">创建空文件</h2>
+<ul>
+<li>点击下拉菜单“创建文本文件”，输入文本文件名称，点击“保存”完成文本文件创建。</li>
+<li>注：新创建的文本文件为空，仅占位使用。</li>
+</ul>
+<h2 id="详细">详细</h2>
+<ol style="list-style-type: decimal">
+<li>双击一行或点击上下文菜单“查看”弹出详细</li>
+</ol>
+<div class="figure">
+<img src="img/my_file_detail.png" alt="文件详细" />
+<p class="caption">文件详细</p>
+</div>
+<h2 id="编辑">编辑</h2>
+<ol style="list-style-type: decimal">
+<li>选中一行或点击上下文菜单中“编辑”弹出详细</li>
+</ol>
+<div class="figure">
+<img src="img/my_file_edit.png" alt="文件编辑" />
+<p class="caption">文件编辑</p>
+</div>
+<h2 id="下载">下载</h2>
+<ol style="list-style-type: decimal">
+<li>点击上下文菜单“下载”下载文件。</li>
+</ol>
+<h2 id="删除">删除</h2>
+<ol style="list-style-type: decimal">
+<li>点击上下文菜单中“删除”弹出删除告警，确认后删除。</li>
+</ol>
+<h2 id="分享">分享</h2>
+<ol style="list-style-type: decimal">
+<li>双击一行或点击上下文菜单“查看”弹出详细，打勾“分享”标志位。</li>
+<li>注：发布审核后的文件才会被其他单位看到。</li>
+</ol>
+<h2 id="发布">发布</h2>
+<ol style="list-style-type: decimal">
+<li>双击一行或点击上下文菜单“查看”弹出详细，打勾“发布”标志位。</li>
+<li>发布后的文件管理员或单位管理员才能看到。</li>
+</ol>
+<h2 id="审核">审核</h2>
+<ol style="list-style-type: decimal">
+<li>双击一行或点击上下文菜单“查看”弹出详细，打勾“审核”标志位。</li>
+<li>审核只能管理员或单位管理员才可以进行审核操作，文件审核后，将不能再编辑。</li>
+</ol>
+<h1 id="我的账户">我的账户</h1>
+<div class="figure">
+<img src="img/my_info.png" alt="我的账户" />
+<p class="caption">我的账户</p>
+</div>
+<ul>
+<li>UID : 帐户唯一标识；</li>
+<li>用户名: 登录系统使用名称；</li>
+<li>电子邮件: 帐户绑定的电子邮件；</li>
+<li>真实姓名: 帐户显示名称，当为空时，显示名称与帐户名称相同;</li>
+<li>头像: 帐户头像标识，点击更换，支持裁剪;</li>
+<li>最后登录时间：显示登录本系统最后时间;</li>
+<li>最后登录IP: 最后登录IP地址;</li>
+<li><p>角色：显示帐户角色。</p></li>
+<li>个人可以编辑：邮箱、真实姓名、头像，其它字段只读。</li>
+<li><p>点击“提交”保存</p></li>
+</ul>
+<h1 id="修改密码">修改密码</h1>
+<div class="figure">
+<img src="img/my_changepassword.png" alt="修改密码" />
+<p class="caption">修改密码</p>
+</div>
+<h1 id="工具下载">工具下载</h1>
+<pre><code>下载APP客户端、大文件传送客户端、支持H5火狐浏览器等。</code></pre>
+<div class="figure">
+<img src="img/help_download.png" alt="工具下载" />
+<p class="caption">工具下载</p>
+</div>
+                            </div>
+                            
+                    	</div>
+                        <div class="col-md-2">
+                            <div class="portlet light fixed" style="right:20px;">
+                                <div class="portlet-title">
+                                    <div class="actions">
+                                        
+                                <a href="/docs/admin/user.pdf" class="btn btn-default" > 下载
+                                    <i class="fa fa-file-pdf-o"></i>
+                                </a>
+
+                                    </div>
+                                </div>
+                                <div class="portlet-body">
+                                    <div class="man-sidemenu" >
+                                                                                    <ul>
+                                            <li><a href="#前言">前言</a></li>
+                                            <li><a href="#登录">登录</a></li>
+                                            <li><a href="#我的面板">我的面板</a></li>
+                                            <li><a href="#我的存储空间">我的存储空间</a></li>
+                                            <li><a href="#我的文件">我的文件</a><ul>
+                                            <li><a href="#列表">列表</a></li>
+                                            <li><a href="#上传">上传</a></li>
+                                            <li><a href="#转码">转码</a></li>
+                                            <li><a href="#创建目录">创建目录</a></li>
+                                            <li><a href="#创建空文件">创建空文件</a></li>
+                                            <li><a href="#详细">详细</a></li>
+                                            <li><a href="#编辑">编辑</a></li>
+                                            <li><a href="#下载">下载</a></li>
+                                            <li><a href="#删除">删除</a></li>
+                                            <li><a href="#分享">分享</a></li>
+                                            <li><a href="#发布">发布</a></li>
+                                            <li><a href="#审核">审核</a></li>
+                                            </ul></li>
+                                            <li><a href="#我的账户">我的账户</a></li>
+                                            <li><a href="#修改密码">修改密码</a></li>
+                                            <li><a href="#工具下载">工具下载</a></li>
+                                            </ul>
+                                                                            </div>
+                                </div>
+                            </div>                    		 
+                    	</div>
+                    </row>
+                    	
+                    </div>
+                </div>
+                <!-- END CONTENT BODY -->
+            </div>
+            <!-- END CONTENT -->
+
+        </div>
+        <!-- END CONTAINER -->
+        <!-- BEGIN FOOTER -->
+        <div class="page-footer">
+            <div class="page-footer-inner"> 2024 &copy; <a href="https://www.relaxcms.com" target="_blank">RC</a>
+                <div class="scroll-to-top">
+                    <i class="icon-arrow-up"></i>
+                </div>
+        </div>
+                <!-- END FOOTER -->
+    <script lang="javascript">
+        jQuery(document).ready(function(){
+            jQuery('pre').addClass('prettyprint')
+            prettyPrint();
+
+        });
+    </script>
+    </body>
+</html>

@@ -1,0 +1,29 @@
+<div class="portlet-body form">
+    
+
+	<div class="form-body">
+	    <rdoc:include file="detailbody.htm" />		
+	</div>
+	<div class="form-actions">
+		<div class="row ">
+		    
+			<div class="col-md-12 ac">
+            <!--# foreach ($params[optdb] as $key=>$v) { if (isset($v['detail']) && !$v['detail']) continue; $url = isset($v['url'])?$v['url']:"$_base/$v[name]?dlg=$dlg&modname=$modname&id=$id"; #-->
+            <button type="button" href="$url" class="btn $v[class]  tmilink" title="$v[title]" action="$v[action]" id="$table_id$v[name]" data-name="$v[name]" data-id="$id"  msg="$v[msg]"> 
+            <i class="$v[icon]"></i> $v[title] </button>
+            <!--#  } if ($dlg == 1 ) { #-->
+            <button type="button" class="btn default" id="btnClose">@t[Close]</button>
+            <!--# } else { #-->
+            <button type="button" class="btn default" onclick="javascript:history.go(-1);">@t[Back]</button>
+            <!--# }  #-->
+			</div>
+		</div>
+	</div>
+</div>
+
+
+<script language="javascript">
+jQuery(document).ready(function() {
+    
+}); 
+</script>

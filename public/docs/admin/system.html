@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html  dir="ltr">
+
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>系统管理员手册</title>
+        <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon">
+        <link rel="apple-touch-icon-precomposed" href="images/apple-touch-icon.png">
+
+        <link href="../../static/css/man.css" rel="stylesheet" >
+        <script src="../../static/js/man.js"></script>
+        
+        <meta name="generator" content="pandoc-man" />
+                <meta name="author" content="柑桔" />
+                        <title>系统管理员手册</title>
+        <style type="text/css">code{white-space: pre;}</style>
+                
+                                        </head>
+
+     <body class="page-header-fixed page-sidebar-fixed  page-sidebar-closed-hide-logo page-container-bg-solid">
+        <!-- BEGIN HEADER -->
+        <div class="page-header navbar navbar-fixed-top">
+            <!-- BEGIN HEADER INNER -->
+            <div class="page-header-inner ">
+                <!-- BEGIN LOGO -->
+                <div class="page-logo">
+                    <a href="index.html">
+                        <img src="../../static/img/logo-default3.png" alt="logo" class="logo-default" /> </a>
+                    <div class="menu-toggler sidebar-toggler">
+                        <!-- DOC: Remove the above "hide" to enable the sidebar toggler button on header -->
+                    </div>
+                </div>
+                <!-- END LOGO -->
+                <!-- BEGIN RESPONSIVE MENU TOGGLER -->
+                <a href="javascript:;" class="menu-toggler responsive-toggler" data-toggle="collapse" data-target=".navbar-collapse"> </a>
+                <!-- END RESPONSIVE MENU TOGGLER -->
+                
+                <!-- BEGIN PAGE TOP -->
+                <div class="page-top">                   
+                    <!-- BEGIN TOP NAVIGATION MENU -->
+                    <div class="top-menu">
+                       
+                    </div>
+                    <!-- END TOP NAVIGATION MENU -->
+                </div>
+                <!-- END PAGE TOP -->
+            </div>
+            <!-- END HEADER INNER -->
+        </div>
+        
+        <!-- BEGIN HEADER & CONTENT DIVIDER -->
+        <div class="clearfix"> </div>
+        <!-- END HEADER & CONTENT DIVIDER -->
+        <!-- BEGIN CONTAINER -->
+        <div class="page-container">
+            <!-- BEGIN SIDEBAR -->
+            <div class="page-sidebar-wrapper">
+                <!-- DOC: Set data-auto-scroll="false" to disable the sidebar from auto scrolling/focusing -->
+                <!-- DOC: Change data-auto-speed="200" to adjust the sub menu slide up/down speed -->
+                <div class="page-sidebar navbar-collapse collapse">
+                    <!--主菜单 -->
+<ul class="page-sidebar-menu  page-header-fixed page-sidebar-menu-compact" data-keep-expanded="true" data-auto-scroll="false" data-slide-speed="200">
+                        
+
+
+<li class="nav-item active open ">
+	<a href="javascript:;" class="nav-link nav-toggle">
+	    <i class="icon-folder"></i>
+	    <span class="title">操作手册</span>
+	    <span class="arrow open"></span>
+	</a>
+	
+	<!-- 子菜单 -->
+	<ul class="sub-menu">		
+		
+		<li id="aboutus" class="nav-item  ">
+	        <a href="/docs/admin/aboutus.html" class="nav-link "  >
+	        	<i class="icon-item"></i> 
+	            <span class="title">RelaxCMS简介</span>
+	        </a>
+	    </li>
+		
+		<li id="user" class="nav-item  ">
+	        <a href="/docs/admin/user.html" class="nav-link "  >
+	        	<i class="icon-item"></i> 
+	            <span class="title">操作员手册</span>
+	        </a>
+	    </li>
+		
+		<li id="system" class="nav-item active open ">
+	        <a href="/docs/admin/system.html" class="nav-link "  >
+	        	<i class="icon-item"></i> 
+	            <span class="title">系统管理员手册</span>
+	        </a>
+	    </li>
+		
+		<li id="api" class="nav-item  ">
+	        <a href="/docs/admin/api.html" class="nav-link "  >
+	        	<i class="icon-item"></i> 
+	            <span class="title">API手册</span>
+	        </a>
+	    </li>
+		
+	</ul>
+</li>
+
+
+</ul>
+                </div>
+                <!-- END SIDEBAR -->
+            </div>
+            <!-- END SIDEBAR -->
+            <!-- BEGIN CONTENT -->
+            <div class="page-content-wrapper">
+                <!-- BEGIN CONTENT BODY -->
+                <div class="page-content">
+                    <!-- BEGIN PAGE HEADER-->
+                  
+                    <h1 class="page-title"> 系统管理员手册
+                        <small>版本：0.11.3 / 日期：2025.4.23</small>
+                    </h1>
+                    
+                    <div class="row">
+                        <div class="col-md-10">                           
+                            
+                    		<div class="man-body">
+                    				<h2 id="前言">前言</h2>
+<p>本手册为系统管理员手册，主要介绍系统全局配置、用户管理、用户组管理、用户角色管理、系统备份、系统日志、应用安装等系统管理功能。主要阅读对象为系统管理员。</p>
+<p><em>注1：本手册内容依据版本变化将会即时修订，当手册描述与软件实现不一致时，请下载或登录系统查看与软件版本一致的最新手册。</em></p>
+<p><em>注2：WEB浏览器版本必须支持H5，否则部份功能将无法使用，推存使用Firefox 60.0以上版本 </em></p>
+<h2 id="登录">登录</h2>
+<p>使用系统管理员角色登录本系统，更多参<a href="user.html">登录</a></p>
+<h2 id="系统管理">系统管理</h2>
+<div class="figure">
+<img src="img/system_main.png" alt="系统管理默认主界面" />
+<p class="caption">系统管理默认主界面</p>
+</div>
+<h2 id="系统配置">系统配置</h2>
+<pre><code>点击：系统管理|系统配置，如下：</code></pre>
+<p><img src="img/system_config.png" alt="系统配置界面截图" /> <img src="img/system_config2.png" alt="系统配置界面截图" /> <img src="img/system_config3.png" alt="系统配置界面截图" /></p>
+<ul>
+<li><p>系统名称：可修改，系统标识之一，浏览器页签标题中显示此字段。</p></li>
+<li><p>后端模板：后端支持页面模板定制，初始为“默认”。</p></li>
+<li><p>默认页面布局:实现“固定宽度”与“自适应”两种部局。</p></li>
+<li><p>“简约”选项：打勾启动简约UI，不打勾系统处于完整UI,完整UI显示页面导航。</p></li>
+<li><p>默认主题: 支持：绿、蓝、红三种主题色，默认启用“绿”。</p></li>
+<li><p>默认语言：支持“简体中文”与“English”两种语言包，默认为“简体中文”。</p></li>
+<li><p>后端登录背景图: 上传本地图片可以更换系统背景图片。</p></li>
+<li><p>登录验证码: 开启此选项后每一次登录系统需要输入验证码，默认开启。</p></li>
+<li><p>安全码: 系统认证使用参数，变更此项后，系统缓存的登录信息将立即失效，建议定期更换以提高系统安全。</p></li>
+<li><p>API/API存取码：第三方应用提供存取本系统接口。</p></li>
+<li><p>记忆登录：开启此选项，登录时允许浏览器记录登录信息，默认开启，高机密应用建议关闭此选项。</p></li>
+<li><p>调试日志: 开发调试使用，正式运行系统，建议关闭。</p></li>
+<li><p>点击“提交”保存系统配置变更。</p></li>
+</ul>
+<h2 id="系统集群">系统集群</h2>
+<h2 id="用户管理">用户管理</h2>
+<h3 id="列表">列表</h3>
+<pre><code>实现新用户分页列表显示。点击：系统管理|用户管理，如下：</code></pre>
+<div class="figure">
+<img src="img/system_user.png" alt="用户列表界面截图" />
+<p class="caption">用户列表界面截图</p>
+</div>
+<h3 id="添加">添加</h3>
+<pre><code>实现新用户创建。点击：系统管理|用户管理|新建，如下：</code></pre>
+<div class="figure">
+<img src="img/system_user_add.png" alt="用户添加界面截图" />
+<p class="caption">用户添加界面截图</p>
+</div>
+<h3 id="修改">修改</h3>
+<pre><code>实现用户修改。点击：系统管理|用户管理，选中一行点击“编辑”或点“操作列”“编辑”。</code></pre>
+<h3 id="删除">删除</h3>
+<pre><code>实现用户删除。点击：系统管理|用户管理，选中一行点击“删除”或点“操作列”“删除”。</code></pre>
+<div class="figure">
+<img src="img/system_user_del.png" alt="删除用户确认提示" />
+<p class="caption">删除用户确认提示</p>
+</div>
+<h3 id="详细">详细</h3>
+<ul>
+<li>双击一行，显示详细：</li>
+</ul>
+<div class="figure">
+<img src="img/system_user_detail.png" alt="用户详细" />
+<p class="caption">用户详细</p>
+</div>
+<h2 id="用户组管理">用户组管理</h2>
+<h3 id="列表-1">列表</h3>
+<pre><code>实现新用户组分页列表显示。点击：系统管理|用户组管理，如下：</code></pre>
+<div class="figure">
+<img src="img/system_group.png" alt="用户组添加界面截图" />
+<p class="caption">用户组添加界面截图</p>
+</div>
+<h3 id="添加-1">添加</h3>
+<pre><code>实现新用户组创建。点击：系统管理|用户组管理|新建，如下：</code></pre>
+<div class="figure">
+<img src="img/system_group_add.png" alt="用户组添加界面截图" />
+<p class="caption">用户组添加界面截图</p>
+</div>
+<h3 id="修改-1">修改</h3>
+<pre><code>实现用户组修改。点击：系统管理|用户组管理，选中一行点击“编辑”或点“操作列”“编辑”。</code></pre>
+<h3 id="删除-1">删除</h3>
+<pre><code>实现用户组删除。点击：系统管理|用户组管理，选中一行点击“删除”或点“操作列”“删除”。</code></pre>
+<h2 id="用户角色管理">用户角色管理</h2>
+<h3 id="列表-2">列表</h3>
+<pre><code>实现新用户角色分页列表显示。点击：系统管理|用户角色管理，如下：</code></pre>
+<div class="figure">
+<img src="img/system_role.png" alt="用户角色添加界面截图" />
+<p class="caption">用户角色添加界面截图</p>
+</div>
+<h3 id="添加-2">添加</h3>
+<pre><code>实现新用户角色创建。点击：系统管理|用户角色管理|新建，如下：</code></pre>
+<div class="figure">
+<img src="img/system_role_add.png" alt="用户角色添加界面截图" />
+<p class="caption">用户角色添加界面截图</p>
+</div>
+<h3 id="修改-2">修改</h3>
+<pre><code>实现用户角色修改。点击：系统管理|用户角色管理，选中一行点击“编辑”或点“操作列”“编辑”。</code></pre>
+<h3 id="删除-2">删除</h3>
+<pre><code>实现用户角色删除。点击：系统管理|用户角色管理，选中一行点击“删除”或点“操作列”“删除”。</code></pre>
+<h2 id="操作日志">操作日志</h2>
+<pre><code>实现操作日志查询。点击：系统管理|操作日志，如下：</code></pre>
+<h2 id="备份与恢复">备份与恢复</h2>
+<pre><code>实现系统数据备份与恢复。点击：系统管理|备份与恢复，如下：</code></pre>
+<h2 id="应用管理">应用管理</h2>
+<pre><code>实现应用安装与卸载。点击：系统管理|应用管理，如下：</code></pre>
+<h2 id="帮助">帮助</h2>
+<h2 id="版本信息">版本信息</h2>
+<pre><code>显示软件版本信息。
+
+点击：帮助|版本信息。</code></pre>
+<h2 id="系统信息">系统信息</h2>
+<pre><code>显示系统软硬件及基础用运行环境信息，显示开源软件许可证声明信息。
+点击：帮助|系统信息。</code></pre>
+<h2 id="工具下载">工具下载</h2>
+<pre><code>下载APP客户端、传送客户端、支持H5火狐浏览器等。
+
+点击：帮助|工具下载。</code></pre>
+<h2 id="系统升级">系统升级</h2>
+<pre><code>使用有升级权限的管理员帐户登录本系统，点击：帮助|系统升级，如下：</code></pre>
+<p><img src="img/help_upgrade1.png" alt="系统升级菜单" /><br />
+<img src="img/help_upgrade2.png" alt="系统升级上传执行" /></p>
+                            </div>
+                            
+                    	</div>
+                        <div class="col-md-2">
+                            <div class="portlet light fixed" style="right:20px;">
+                                <div class="portlet-title">
+                                    <div class="actions">
+                                        
+                                <a href="/docs/admin/system.pdf" class="btn btn-default" > 下载
+                                    <i class="fa fa-file-pdf-o"></i>
+                                </a>
+
+                                    </div>
+                                </div>
+                                <div class="portlet-body">
+                                    <div class="man-sidemenu" >
+                                                                                    <ul>
+                                            <li><a href="#前言">前言</a></li>
+                                            <li><a href="#登录">登录</a></li>
+                                            <li><a href="#系统管理">系统管理</a></li>
+                                            <li><a href="#系统配置">系统配置</a></li>
+                                            <li><a href="#系统集群">系统集群</a></li>
+                                            <li><a href="#用户管理">用户管理</a><ul>
+                                            <li><a href="#列表">列表</a></li>
+                                            <li><a href="#添加">添加</a></li>
+                                            <li><a href="#修改">修改</a></li>
+                                            <li><a href="#删除">删除</a></li>
+                                            <li><a href="#详细">详细</a></li>
+                                            </ul></li>
+                                            <li><a href="#用户组管理">用户组管理</a><ul>
+                                            <li><a href="#列表-1">列表</a></li>
+                                            <li><a href="#添加-1">添加</a></li>
+                                            <li><a href="#修改-1">修改</a></li>
+                                            <li><a href="#删除-1">删除</a></li>
+                                            </ul></li>
+                                            <li><a href="#用户角色管理">用户角色管理</a><ul>
+                                            <li><a href="#列表-2">列表</a></li>
+                                            <li><a href="#添加-2">添加</a></li>
+                                            <li><a href="#修改-2">修改</a></li>
+                                            <li><a href="#删除-2">删除</a></li>
+                                            </ul></li>
+                                            <li><a href="#操作日志">操作日志</a></li>
+                                            <li><a href="#备份与恢复">备份与恢复</a></li>
+                                            <li><a href="#应用管理">应用管理</a></li>
+                                            <li><a href="#帮助">帮助</a></li>
+                                            <li><a href="#版本信息">版本信息</a></li>
+                                            <li><a href="#系统信息">系统信息</a></li>
+                                            <li><a href="#工具下载">工具下载</a></li>
+                                            <li><a href="#系统升级">系统升级</a></li>
+                                            </ul>
+                                                                            </div>
+                                </div>
+                            </div>                    		 
+                    	</div>
+                    </row>
+                    	
+                    </div>
+                </div>
+                <!-- END CONTENT BODY -->
+            </div>
+            <!-- END CONTENT -->
+
+        </div>
+        <!-- END CONTAINER -->
+        <!-- BEGIN FOOTER -->
+        <div class="page-footer">
+            <div class="page-footer-inner"> 2024 &copy; <a href="https://www.relaxcms.com" target="_blank">RC</a>
+                <div class="scroll-to-top">
+                    <i class="icon-arrow-up"></i>
+                </div>
+        </div>
+                <!-- END FOOTER -->
+    <script lang="javascript">
+        jQuery(document).ready(function(){
+            jQuery('pre').addClass('prettyprint')
+            prettyPrint();
+
+        });
+    </script>
+    </body>
+</html>

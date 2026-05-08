@@ -1,0 +1,86 @@
+<form name="lvform" method="post">
+<!--# if($hidefields) { #-->
+<input type="hidden" name="params[__hidefields]" value="$hidefields" class="form-filter" />
+<!--# } #-->
+
+	<input type="hidden" name="dlg" value="$dlg" class="form-filter" />
+<!--# foreach($hidden_filter_fields as $key=>$v) { #-->
+<input type="hidden" name="params[$key]" value="$v" class="form-filter" />
+<!--# } #-->
+
+<!-- BEGIN  Listview PORTLET-->
+<div class="portlet light lv listview lv$col" id="mylistview_$modname" 
+data-modname="$modname"
+data-singleselect="$singleselect"
+data-url="$_basename/$comname"
+data-col="$col"
+data-dlg="$dlg"
+data-notabhead="$notabhead"
+data-notoolbar="$notoolbar"
+data-nooptmenu="$nooptmenu"
+data-keyword="$_keyword"
+data-vmask="$vmask"
+data-defaultviewtype="$defaultviewtype"
+>
+
+	<template name="toolbar">
+	
+	<div id="toolbar$table_id" class="form-inline searchbar">
+<!--# foreach($sfdb as $key=>$v) { if (!$v['searchinput']) continue; #-->
+    <div class="form-group">
+            $v[searchinput]
+    </div>
+<!--# } #-->
+
+<!--# foreach($sfdb as $key=>$v) { if (($v['searchable'] & 2) == 2) { #-->
+    <div class="form-group">
+            $v[input]
+    </div>
+<!--# }} #-->
+    <input type="button" class="btn btn-primary filter-field btnSearch" id="query$table_id" value="搜索"/>
+    <!--# if ($hasAdd) { #-->
+     <div class="form-group">
+	    <a href="$_base/add" class="btn btn-primary" title="创建" >
+	        <i class="fa fa-plus"> 创建 </i>
+	    </a>
+	</div>
+	<!--# } #-->
+</div> 
+
+		
+	</template>
+
+</div>
+<!-- END Listview PORTLET -->
+</form>
+
+
+<script language="javascript">
+	//listview
+	var listview_$modname = null;
+	
+    $(document).ready(function() {
+
+    //blueimp-gallery
+    if (!$.Gallery) {
+        $('#blueimp-gallery').hide();
+    }
+    
+	$("#mylistview_$modname").listview({
+		search:true,
+		pagination:true,
+		onLoad: function(lv) {
+			listview_$modname = lv;
+		},
+		onDone:function (lv) {
+			//console.log("onDone....");
+		}
+	});
+
+	//search
+	$('#btnSearch').on('click', function(e){
+		listview_$modname.reload();
+	});
+});
+
+</script>

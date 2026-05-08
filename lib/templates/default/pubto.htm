@@ -1,0 +1,312 @@
+﻿<rdoc:include file="head.htm" />
+
+<!-- BEGIN PAGE CONTENT-->			
+<div class="row">
+	<div class="col-md-12">
+<div class="portlet box default">
+<!--# if (!$dlg) { #-->
+<div class="portlet-title">
+    <div class="caption">
+        <i class="fa fa-globe"></i>$mi18n[modelname] <small> $str_task  </small>
+    </div>
+    <div class="actions">
+        
+        <!--# foreach ($toolmenuitems as $key=>$v) { if ($v['action'] != 'file') { #-->
+         <a href="$_base/$v[name]" class="btn $v[class]  btn-sm tmilink" action="$v[action]" id="$table_id$v[name]"> 
+            <i class="$v[icon]"></i> $v[title] </a>
+        <!--#  } else { #-->
+            <a href="javascript:;" class='btn $v[class] btn-sm fileinput-button'>
+                        <i class="$v[icon]"></i>
+                        <span>$v[title]</span>
+                        <input id="file1" class="fileimport" type="file" name="upfile" multiple />
+            </a>
+        <!--#  } } #-->
+
+        
+       <button type="button" class="btn btn-primary btn-sm refresh">
+            <i class="fa fa-refresh"></i> @T[Refresh] </button>
+            
+        <div class="btn-group">    
+        <button type="button" class="btn default dropdown-toggle" data-toggle="dropdown"><i class="fa fa-angle-down"></i></button>
+            <ul class="dropdown-menu pull-right">
+                <!--# if ($toolmenuitems) { foreach ($toolmenuitems as $key=>$v) { #-->
+                <li>
+                    <!--#if ($v['action'] != 'file') { #-->
+                    <a href="$_base/$v[name]" class="tmilink" action="$v[action]" quicklink='tmiquicklink_$table_id' >
+                    <i class="$v[icon]"></i> $v[title] </a>
+                    <!--# } else { #-->
+
+                    <a href="javascript:;" class='fileinput-button'>
+                        <i class="$v[icon]"></i>
+                        <span>$v[title]</span>
+                        <input id="fileupload_$key" type="file" name="upfile" multiple />
+                    </a>
+                    <!--# } #-->
+                </li>
+                <!--# } } #-->
+            </ul>
+        </div>
+    </div>
+</div>
+<!--# } #-->
+
+<div class="portlet-body">
+
+				<!-- BEGIN FORM-->
+				<form action="$_base" id="pubtoform" name='pubtoform' method="POST" class="form-horizontal">
+					<input type="hidden" name="sbt" value="$sbt" id="sbt" >
+					<input type="hidden" name="component" value="$component">
+					<input type="hidden" name="task" value="$task">
+					<input type="hidden" name="id" value="$id">
+					<input type="hidden" name="params[id]" value="$params[id]">
+					<input type="hidden" name="dlg" value="$dlg">
+                  
+                    <div class="form-body">                        
+                        <div class="form-group">
+                            <label class="control-label col-md-3">ID 
+                            </label>
+                            <div class="col-md-4">
+                                <span class="form-control-static">$params[id]</span>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="control-label col-md-3">标题
+                            </label>
+                            <div class="col-md-4">
+                                <span class="form-control-static">$params[name]</span>
+                            </div>
+                        </div>
+                        <!--# if (isset($params[_cid])) { #-->   
+                        <div class="form-group">
+                            <label class="control-label col-md-3">目录
+                            </label>
+                            <div class="col-md-4">
+                                <span class="form-control-static">$params[_cid]</span>
+                            </div>
+                        </div>
+                        <!--# } #-->   
+                        
+                         <div class="form-group">
+                            <label class="control-label col-md-3">标志位
+                            
+                             <span><i class="fa  fa-question-circle  tooltips" 
+                                            data-style="default" data-placement="bottom" 
+                                            data-container="body" data-original-title="记录发布标志位设置"></i>
+                                    
+                                </span>
+                                    
+                            </label>
+                            <div class="col-md-4">
+                                <span class="form-control-static">$params[_flags]</span>
+                                
+                            </div>
+                        </div>
+                        
+                        
+                        
+                        
+                        <div class="form-group">
+                            <label class="control-label col-md-3">发布到
+                             <span><i class="fa  fa-question-circle  tooltips" 
+                                            data-style="default" data-placement="bottom" 
+                                            data-container="body" data-original-title="请勾选发布目标机构、平台或区域等"></i>
+                                    
+                            </span>
+                                    
+                            </label>
+                            
+                            <div class="col-md-9">
+                                
+                            
+                                <div class="form-control-static">
+                                <!--# if (isset($params['pubtodb'])) { foreach ($params['pubtodb'] as $key=>$v) { #-->
+                                <label class="checkbox-inline">
+                                    <input type="checkbox" class="params_pubto" name="params[pubto][$v[to_modname]][$v[id]]" value="$v[id]" $v[_checked] $v[_disable] > $v[name]
+                                </label>
+                                <!--# }} #-->
+                                </div>
+
+                            </div>
+                        
+                        </div>
+                        
+                        
+                        <div class="form-group">
+                            <label class="control-label col-md-3">发布时间
+                             <span><i class="fa  fa-question-circle  tooltips" 
+                                            data-style="default" data-placement="bottom" 
+                                            data-container="body" data-original-title="立即或定时"></i>
+                                    
+                            </span>
+                                    
+                            </label>
+                            
+                            <div class="col-md-9">
+                            
+                                    <label class="form-control-static">
+                                       $params[_etype]                        
+                                    </label>
+                                    
+                                    <label class="form-control-static $etimehidden" id="param_etime_wrapper"> 
+                                        $params[_etime]                		
+                                     </label>
+                                                                     
+
+                            </div>
+                        
+                        </div>
+                        
+                        
+
+
+                        <div class="form-group">
+                            <label class="control-label col-md-3">
+                             <span>
+                                    
+                            </span>
+                                    
+                            </label>
+                            <div class="col-md-9">
+                                                            
+                                <div class="form-control-static">
+                                
+                                    <label class="checkbox-inline">
+                                        <input type="checkbox" class="params_preview" name="params[eflags][preview]" value="0" {$params['_eflagsChecked'][0]}> 预览
+                                    </label>
+
+                                    <label class="checkbox-inline">
+                                        <input type="checkbox" class="params_release" name="params[eflags][release]" value="1" {$params['_eflagsChecked'][1]}> 发表
+                                    </label>
+
+                                    <label class="checkbox-inline">
+                                        <input type="checkbox" class="params_notify" name="params[eflags][notify]" value="2" {$params['_eflagsChecked'][2]}> 群发通知
+                                    </label>
+                                    
+                                    <label class="checkbox-inline hidden">
+                                        <input type="checkbox" name="params[eflags][lockpub]" value="3" title="勾选终端将补锁定到此节目，直到当前节目完成才解锁" {$params['_eflagsChecked'][3]} /> 锁定节目 
+                                    </label>
+
+                                    <label class="checkbox-inline">
+                                        <input type="checkbox" name="params[eflags][forcepub]" value="4" title="勾选此项将发送消息给目标选项" {$params['_eflagsChecked'][4]} /> 消息推送 
+                                    </label>
+                            
+                                   <!--# if ($isContent) { #-->                            
+                                   <label class="checkbox-inline">                            
+                                        <input type="checkbox" name="params[eflags][forcedel]" value="5"  title="取消发布，将强制删除已同步节目文件"  {$params['_eflagsChecked'][5]} id="chkForceDel" /> 取消删除同步 
+                                   </label>
+                                   <!--# } #-->
+                             
+
+                                </div>
+
+                            </div>
+                        
+                        </div>
+
+                    </div>
+                    
+                   
+                    
+				    <div class="form-actions">
+					    <div class="row">
+						    <div class="col-md-offset-3 col-md-9">          
+                                <button type="submit" class="btn btn-primary" id="btnSubmit">@t[Submit]</button>
+                                <button type="button" class="btn default" id="btnClose">@t[Close]</button>            						   
+						    </div>
+					    </div>
+					</div>
+										
+				</div>
+				
+				</form>
+				<!-- END FORM-->
+</div>
+</div>
+<script type="text/javascript">
+
+jQuery(document).ready(function() { 
+     $('#btnClose').on("click", function(e){
+        //假设这是iframe页
+        var index = parent.layer.getFrameIndex(window.name); //先得到当前iframe层的索引
+        parent.layer.close(index); //再执行关闭  
+    }); 
+    
+    $('#pubtoform').validate({
+        errorElement: 'span', //default input error message container
+        errorClass: 'help-block', // default input error message class
+        focusInvalid: false, // do not focus the last invalid input
+        rules: {
+        
+        },
+
+        messages: {
+       
+        },
+
+        invalidHandler: function (event, validator) { //display error alert on form submit   
+            $('.alert-danger', $('.login-form')).show();
+        },
+
+        highlight: function (element) { // hightlight error inputs
+            $(element)
+                .closest('.form-group').addClass('has-error'); // set error class to the control group
+        },
+
+        success: function (label) {
+            label.closest('.form-group').removeClass('has-error');
+            label.remove();
+        },
+
+        errorPlacement: function (error, element) {
+            error.insertAfter(element);
+        },
+
+        submitHandler: function (form) {
+            
+            var msg = $('#param_flags_0').is(':checked')?"确定发布吗？":"确定取消发布吗？";
+            
+            var  formData = $(form).serializeArray();
+            //console.log(formData);
+            bootbox.confirm(msg, function(result) {
+             if (result) {
+                showWaiting("请稍后。。。");       
+                $.post(form.action, formData, function(res) {
+                    if (res.status == 0) {
+                        rui.showStatus(res);                       
+                    } else {
+                       rui.showStatus(res);
+                    }
+                }).fail(function(res){
+                     rui.showStatus(res);
+                }).always(function(){
+                    closeWaiting();
+                });
+             }
+           });
+            
+        }
+    }); 
+    
+    $('#param_etype').on('change', function(e){
+        var val = parseInt($(this).val());        
+        //'0'=>'立即', '1'=>'定时'
+        switch(val){
+            default:
+            case 0:  
+                $('#param_etime_wrapper').addClass('hidden');
+                break;
+            case 1:     
+                $('#param_etime_wrapper').removeClass('hidden');     
+                break;
+        }
+    });
+               
+});
+
+</script>
+	</div>
+</div>
+<!-- END PAGE CONTENT -->
+
+<rdoc:include file="foot.htm" />			

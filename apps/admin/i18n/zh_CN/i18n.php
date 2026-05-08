@@ -1,0 +1,522 @@
+<?php
+$i18n = array(
+	'str_system_name' => 'RC',
+	'str_system_subtitle' => 'Relax Content Management System',
+	'str_system_title' =>  '简木内容管理系统',
+	'str_system_corporation' =>  '3NWARE',
+	'str_system_copyright_corp' =>  '3N',
+
+	/* 基本目录 */
+	
+	'menu_my'				=>	'我的面板',
+	'menu_my_info'			=>	'我的账户',
+	'menu_my_password'		=>	'修改密码',
+	'menu_my_ip'			=>	'登录IP限制',
+	'menu_main'				=>  '我的面板',
+	'menu_index'			=>  '首页',
+
+	'menu_system'	=>	'系统管理',				
+	'menu_config'	=>	'系统配置',
+	'menu_user'		=>	'用户管理',
+	'menu_group'	=>	'用户组管理',
+	'menu_role'		=>	'用户角色管理',
+	'menu_session'	=>	'会话管理',
+	'menu_log'		=>	'操作日志',
+	'menu_backup'	=>	'备份与恢复',
+	'menu_super'	=>	'初始管理员',
+	'menu_time'		=>	'日期与时间配置',
+	'menu_var'		=>	'变量配置',
+	'menu_app'		=>	'应用管理',
+	'menu_menu'		=>	'菜单管理',
+		
+	'menu_storage'				=>	'存储管理',
+		'menu_file'				=>	'文件管理',
+		'menu_help' =>'帮助',
+	'menu_help_version' 	=> '版本信息',
+	'menu_help_changelog' 	=> '更新记录',
+	'menu_help_sysinfo' 	=> '系统信息',
+	'menu_help_license' 	=> '许可证信息',
+		'menu_help_manual' 	=> '系统帮助',
+		'menu_help_download' 	=> '工具下载',
+		'menu_help_upgrade'	=>	'系统升级',
+		'menu_help_about'	=>	'关于我们',
+		'menu_help_restfulapi'	=>	'API接口',
+		
+	
+	/*系统配置*/
+	't_i18ndb_config' => array(
+		'Base'=>'基本',
+		'Safe'=>'安全',
+		'Service'=>'服务',
+		'Debug'=>'调试',
+			'Update'=>'更新',
+			'Sms'=>'短信',
+		'Are you sure to delete?'=> '确定删除吗？',
+	),
+		
+	'sel_language' => array('zh_CN'=>'简体中文'/*, 'zh_TW'=>'繁体中文'*/, 'en'=>'English'),
+	'sel_layout' => array('fluid'=>'自适应', 'boxed'=> '固定宽度'),
+	'sel_theme' => array('default'=>'默认'),		
+	'sel_template' => array('default'=>'默认'),	
+		
+	'sel_loglevel' => array('7'=>'调试', '6'=>'消息', '5'=>'通知', '4'=>'告警', '3'=>'错误', '0'=>'关闭'),
+	'sel_login_session_mode' => array('0'=>'默认',  '2'=>'用户抢占式', '3'=>'用户独占式',),
+
+	'sel_dbtype' => array('mysqlpdo'=> 'MysqlPDO','mysql'=> 'MYSQL','mysqli'=> 'MySQLi','mssql'=> 'MSSQL','sqlite'=> 'SQLite','sqlitepdo'=> 'SQLitePDO',
+			'psql'=> 'PostgreSQL','mongo'=> 'MongoDB'),	
+
+	/*用户组*/		
+	'Check All' => '全选',
+	'sel_group_type' => array('1'=>'系统组', '2'=>'用户组'),		
+	'str_sysadmin_group' => '系统管理员组',
+	'str_admin_group' => '管理员组',
+	'str_user_group' => '用户组',
+	'str_group_add_ok'			=>	'添加用户组成功',
+	'str_group_name_empty'		=>	'组名不能为空',	
+	'str_group_privilege_empty'	=>	'组的权限不能为空',
+	'str_group_gid_empty'		=>	'组标识不能为空',
+	'str_group_edit_ok'			=>	'组编辑成功',		
+	'str_group_delete_ok'		=>	'组删除成功',	
+	'str_group_not_empty'		=>	'组非空，不能删除',
+	'str_group_system_change'	=> '系统组，不能修改',
+	'str_group_delete_system_error'	=> '系统组，不能删除',
+	'sel_grouptype' => array('1'=>'系统组', '2'=>'用户组'),
+	'str_group_gid' => '标识',
+	'str_group_groupname' => '组名',
+	'str_group_grouptype' => '组类型',
+	'str_group_privilege' => '权限分配',
+	'str_model_privilege2group_add_ok' => '权限配置',
+	'str_model_group2role_add_ok' => '组角色配置',
+	'str_model_group2role_clean_ok '=>'指定角色中组清理',
+	'str_model_role_add_ok'=>'角色创建',
+	'mod_group' => array(
+			'modelname'=> '组',
+			'gid' => array('title' => '组ID'),
+			'name' => array('title' => '组名'),
+			'description' => array('title' => '组描述'),
+			'type' => array('title' => '类型'),
+			'privilege' => array(
+				'title' => '权限'
+				),
+	),
+	'perms'=>array(
+			'r'=>'读',
+			'w'=>'写',
+			'a'=>'添加',
+			'u'=>'修改',
+			'd'=>'删除',
+			'x'=>'特权',
+		),
+
+	/*用户管理*/
+	'sel_admin_status' => array('1'=>'启用', '2'=>'禁用'),				
+	'str_system_user'	=>	'用户管理',
+		'str_user_check_ok'		=>	'用户登录鉴权成功',
+		'str_user_no_privilege'	=>	'用户没有相关操作权限',
+		'str_user_info_edit_ok'	=>	'个人信息修改成功',
+		'str_user_super_changepasswd'	=>	'超级管理员不能在这里修改密码',
+		'str_user_password_update_ok'	=>	'密码修改成功',
+		'str_user_old_password_error'	=>	'用户密码不正确，请检查输入',
+		'str_user_newpassword_error'	=>	'新密码输入不一至',
+		'str_user_newpassword_not_empty' =>	'新密码不能为空',
+		'str_user_info'	=>	'个人资料',
+		'str_user_password'	=>	'修改密码',
+		'str_user_login_ok' => '用户登录成功',
+		'str_user_logout_ok' => '用户退出成功',
+		'str_user_first_login_must_change_passwd' => '首次登录要修改密码',
+		'str_user_password_last_used' => '密码最新已经用过，请设置其它密码',
+		'str_user_password_too_simple' => '密码太简单，密码须包含：大写、小写字母，数字与其它字符，如：Abc@123',
+		
+		'str_user_name_empty'	=>	'用户名不能为空',
+		'str_user_have_exist'	=>	'用户名已经存存',
+		'str_user_password_empty'	=>	'用户密码为空',
+		'str_user_password2_error'	=>	'确认密码错误',
+		'str_user_group_empty'		=>	'用户所属组不能为空',
+		'str_user_set_ok'				=>	'用户设置成功',
+		'str_user_set_failed'			=>	'用户设置失败',
+		'str_user_uid_empty'			=>	'用户标识错误',
+		'str_user_edit_ok'			=>	'修改用户成功',
+		'str_user_edit_failed'		=>	'修改用户失败',
+		'str_user_delete_yourself'	=>	'不能删除自己',
+		'str_user_site_not_empty'	=>	'用户站点不空，不能删除，请检查',
+		'str_user_cannot_modify_self'	=>	'不能修改自己',
+		'str_user_exists' => '用户名已经存在',
+		'str_user_cannot_change_creator_password' => '不能修改创始人密码，请联系管员',
+		'sel_user_status' => array('1'=>'启用', '2'=>'禁用'),
+		'sel_user_type' => array('1'=>'管理用户', '2'=>'普通用户'),
+		'sel_user_login_mode' => array('8'=>'WUI', '9'=>'CLI'),
+		'str_model_user_set_ok'				=>	'用户设置成功',
+		'str_model_user_del_ok'			=>	'删除用户成功',
+		
+		'sel_user_flags' => array('0'=>'用户', '1'=>'管理', '2'=>'WEBSHELL', '3'=>'SSH'),		
+	'mod_user' => array(
+			'modelname'=> '用户',
+			'id' => array('title' => 'ID'),
+			'uid' => array('title' => 'UID'),
+			'name' => array('title' => '用户名'),
+			'nickname' => array('title' => '昵称'),
+			'avatar' => array('title' => '头像'),
+			'password'=>array(
+				'title'=>'密码',
+				),
+			'password2'=>array(
+				'title'=>'确认密码',
+				),
+			
+			'rid'=>array(
+				'title'=>'角色',
+			),
+			'oid'=>array(
+				'title'=>'构机',
+				),
+			'email'=>array(
+				'title'=>'电子邮件',
+			),			
+			'status'=>array(
+				'title'=>'状态',
+			),
+			'flags'=>array(
+				'title'=>'标识',
+				),
+			'logins'=>array(
+				'title'=>'登录次数',
+				),
+			'type'=>array(
+				'title'=>'类型',
+				),
+		'description' => array('title' => '描述'),
+			'last_time'=>array(
+				'title'=>'上次登录时间',
+				),
+			'last_ip'=>array(
+				'title'=>'上次登录IP',
+				),
+			'fails'=>array(
+				'title'=>'错误次数',
+				),
+			'ts'=>array(
+				'title'=>'创建时间',
+				),
+			'pwd_last_update_ts'=>array(
+				'title'=>'密码最后修改时间',
+				),
+			'last_pwd'=>array(
+				'title'=>'最后密码',
+				),
+			'allow_ip'=>array(
+				'title'=>'允许IP',
+				),
+		),
+
+		/* 用户角色管理 */
+		'sel_role_type' => array('1'=>'内置', '2'=>'自定义'),
+		'str_role_sysadmin'=> '系统管理员',
+		'str_role_admin'=> '管理员',			
+		'str_role_user'=> '用户',			
+		'sel_roletype' => array('1'=>'内置', '2'=>'自定义'),
+		'str_role_gdb_empty' => '角色包含的权限组不能为空',
+		'str_role_add_ok' => '角色添加成功',
+		'str_role_edit_ok' => '角色编辑成功',
+		'str_role_edit_gid_ok' => '角色编辑修改权限组成功',
+		'str_role_admin' => '管理员',
+		'str_role_admin_desc' => '管理员进行业务管理配置，创建业务管理操作员子账户',
+		'str_role_sysadmin' => '系统管理员',
+		'str_role_sysadmin_desc' => '系统管理员系统管理操作，无审计日志查看权，创建系统管理操作员子账户',
+		'str_role_audit' => '审计员',
+		'str_role_audit_desc' => '审计员查看审日志，创建审计操作员子账户',
+		'str_model_group2role_clean_ok'=> '清理组角色成功',
+		'str_model_role_set_ok'=>'设置角色成功',
+		
+		'mod_role' => array(
+			'modelname'=> '角色',
+			'id' => array('title' => 'ID'),
+			'name' => array('title' => '角色名'),
+			'description' => array('title' => '描述'),
+			'type'=>array(
+				'title'=>'类型',
+				'comment'=>'分类内置与自定义两种',
+				),
+			'gdb'=>array(
+				'title'=>'包含组',
+				),
+			'level'=>array(
+				'title'=>'层',
+				'comment'=>'系统保留使用',
+				),
+			),
+
+		/* session */
+'str_model_session_add_ok' => '创建会话成功',
+'str_model_session_set_ok' => '更新会话成功',
+
+'sel_session_login_type' => array('0'=>'默认', '1'=>'用户名', '2'=>'验证码', '3'=>'令牌'),	
+
+		'mod_session' => array(
+			'modelname'=> '会员',
+			'id' => array('title' => 'ID'),
+			'ssid' => array('title' => '会话ID'),
+			'uid' => array('title' => '用户'),
+			'model' => array('title' => '模型'),
+			'cktime'=>array('title'=>'会话超时'),
+			'login_ip'=>array('title'=>'登录IP'),
+			'login_type'=>array('title'=>'登录方式'),
+			'login_ts'=>array('title'=>'登录时间'),
+			'expire_ts'=>array('title'=>'过期时间'),
+			'ts'=>array('title'=>'活动时间'),
+			'hkey'=>array('title'=>'随机串'),
+			),
+			
+
+		/*系统备份与恢复*/
+		'str_backup_out_ok'			=>	'系统备份数据导出成功',
+		'str_backup_in_ok'			=>	'系统备份数据导入成功',
+		'str_backup_delete_ok'		=>	'系统备份文件删除成功',
+		'str_backup_download_ok'	=>	'系统备份数据下载成功',
+		'str_backup_restore_from_local_ok' => '从本地恢复数据库成功',
+		'str_setting_back_clear_ok' => '清理日志成功',
+		't_i18ndb_backup' => array(
+			'Are you sure to restore?' => '确定要恢复系统数据吗? ',
+			'Backup'=> '备份',
+			'Restore'=> '恢复',
+			'BackupList'=> '备份记录',
+			'Upload'=>'上传',
+		),
+				
+		'str_backup_restore_ok' => '恢复系统数据成功',
+		'str_backup_restore_failed' => '恢复系统数据失败',
+		'str_backup_restore_ok' => '恢复模型[%s]成功',
+		'str_model_backup_del_ok'=> '系统备份文件删除成功',
+		  
+		/*系统日志*/
+		'syslog_logid_error'	=>	'系统日志标识错误',
+		'syslog_delete_ok'		=>	'系统日志删除成功',
+		'syslog_logid_error'	=>	'系统日志标识错误',
+		'syslog_delete_ok'		=>	'系统日志删除成功',
+		'str_syslog_reserve_limit' => '日志保留限制，不能删除',
+		'sel_log_level' => array('7'=>'调试', '6'=>'消息', '5'=>'通知', '4'=>'告警提醒', '3'=>'错误', '2'=>'危急', '1'=>'危急警报', '0'=>'崩溃'),		
+		'sel_log_status' => array('0'=>'失败', '1'=>'成功'),		
+		'mod_log' => array(
+			'modelname'=> '日志',
+			'id' => array('title' =>'标识'), 
+			'ts' => array('title' =>'时间'), 
+			'ip' => array('title' =>'IP'), 
+			'uid' => array('title' =>'操作员'), 
+			'description' => array('title' =>'描述'), 
+			'action' => array('title' =>'操作'), 
+			'modname' => array('title' =>'模型'), 
+			'mid' => array('title' =>'对象ID'), 
+			'newobj' => array('title' =>'新对象'), 
+			'oldobj' => array('title' =>'原对象'), 
+			'errno' => array('title' =>'错误码'), 
+			'level' => array('title' =>'级别'), 
+			'status' => array('title' =>'状态'), 
+			),
+		
+		/*初始管理员*/
+		'super_not_manager'			=>	'非初始管理员，操作禁止',
+		'super_manager_empty'		=>	'初始管理员名称不能为空',
+		'super_manager_empty'		=>	'初始管理员名称不能为空',
+		'super_manager_pwd_empty'	=>	'初始管理员密码不能为空',
+		'super_manager_newpwd_empty'	=>	'初始管理员新密码不能为空',
+		'super_manager_newpwd2_empty'	=>	'初始管理员新密码确认不能为空',
+		'super_manager_pwd_error'		=>	'初始管理员原密码错误',
+		'str_super_edit_ok'  =>	'初始管理员修改成功',
+		'str_user_changesuperpassword_failed'=>'初始管理员修改密码失败',
+		'str_user_changesuperpassword_ok'=>'初始管理员修改密码成功',
+		't_i18ndb_super' => array(
+			'New Super Name' => '新初始管理员',
+			'Old password'=> '原密码',
+			'New password'=> '新密码',
+			'New password again'=> '新密码确认',
+			),	
+				
+		
+				
+		
+		/* 系统升级 */
+		'updateapi forbidden!' => '升级接口已禁用',
+		't_i18ndb_help_upgrade'=>array(
+			'Upgrade'=> '系统升级',
+			'Warning!' => '警告！',
+			'The maximum upgrade file size limited'	=> '最大升级包上传限制',
+			'Support upgrade package types'	=> '支持升级包类型',
+			'Select files...' => '选择升级包文件',
+			'Start upload' => '开始上传',
+			'Upgrade Now' => '立即升级',
+			'Are you sure to upgrade row ?'=>'确定立即升级吗？',
+			'Upload upgrade package ok'=>'上传升级包成功',
+			),
+		'str_current_version'	=>	'当前版本',
+		'str_show_uploaded'		=>	'已经上传',
+		'str_upload'			=>	'上传',
+		'str_upgrade_upload_error'			=>	'上传升级包失败',
+		'str_upgrade_no_upload'			=>	'未找到升级包，请检查',
+		'str_upgrade_upload_ok'				=>	'上传升级包成功',		
+		'str_upgrade_failed'	=>	'升级失败，请检查',
+		'str_upgrade_ok'	=>	'系统升级成功',
+		'str_system_upgrade_format_error'=>'升级包格式错误',
+		'str_system_upgrade_upload_ok' => '上传升级包成功',
+		'str_system_upgrade_upload_failed' =>	'上传升级包失败',
+		'str_upload'		=>	'上传',
+		'str_show_uploaded'	=>	'显示已经上传',
+		'str_upgrade_version_error' => '版本错误',
+		'str_upgrade_no_sql_file' => '未找到SQL文件',
+		'str_upgrade_sql_ok' => '升级数据库成功',
+		'str_upgrade_no_dir' => '未找到升级目录',
+		'str_upgrade_readme' => '升级更新说明',
+		'str_upgrade_import_ok' => '升级导入数据成功',
+		'str_upgrade_clearall_ok' => '清理所有数据成功',
+		
+		
+		/* server */
+		'sel_server_mode' => array(
+				'0' =>'关闭',
+				'1' =>'主控',
+				'2' =>'备用',
+				),		
+		'sel_server_online' => array(
+				'0' =>'默认',
+				'1' =>'在线',
+				'2' =>'离线',
+				),
+		'sel_server_status' => array(
+				'0' =>'默认',
+				'1' =>'正常',
+				'2' =>'关闭',
+				),
+
+		'mod_server' => array(
+				'modelname'=> '服务器',
+				'id' => array('title' => 'ID'),
+				'name' => array('title' => '名称'),
+				'description' => array('title' => '描述'),
+				'spid' => array('title' => 'SPID'),
+				'oid' => array('title' => '机构'),
+				'web_prefix'=>array('title'=>'WEB前缀',),	
+				'rtmp_prefix'=>array('title'=>'RTMP前缀',),	
+				'live_prefix'=>array('title'=>'直播前缀',),	
+				'vod_prefix'=>array(	'title'=>'点播前缀',),	
+				'download_prefix'=>array('title'=>'下载前缀',),	
+				'lan_rtmp_prefix'=>array('title'=>'内网RTMP前缀',),	
+				'lan_live_prefix'=>array('title'=>'内网直播前缀',),	
+				'lan_vod_prefix'=>array(	'title'=>'内网点播前缀',),	
+				'lan_download_prefix'=>array('title'=>'内网下载前缀',),	
+				'ip' => array('title' => 'IP'),
+				'version' => array('title' => '版本'),
+				'os' => array('title' => 'OS'),
+				'ts' => array('title' => '更新时间'),
+				'mode' => array('title' => '模式'),
+				'online' => array('title' => '在线'),
+				'status' => array('title' => '状态'),
+				),
+		
+		/* storage */
+		'sel_storage_type' => array(
+			'0' =>'默认',
+			'1' =>'本地',
+			'2' =>'SMB',
+			'3' =>'WEBDAV',
+			'4' =>'ISCSI',
+			'5' =>'NODE',
+			),
+		'sel_storage_status' => array(
+			'0' =>'默认',
+			'1' =>'正常',
+			'2' =>'备份',
+			),
+		'sel_storage_auth' => array(
+			'0' =>'默认',
+			'1' =>'Basic认证',
+			),
+		
+	'mod_storage' => array(
+			'modelname'=> '存储',
+			'id' => array('title' => 'ID'),
+			'name' => array('title' => '名称'),
+		'suid'=>array('title' => 'SUID'),
+			'description' => array('title' => '描述',),			
+			'type' => array('title' => '类型',),			
+			'oid' => array('title' => '机构',),			
+			'sid' => array('title' => '服务器',),			
+			'path' => array('title' => '路径',),			
+			'mountdir' => array('title' => '挂载',),			
+		'auth' => array('title' => '认证',),			
+		'username' => array('title' => '用户名',),			
+		'password' => array('title' => '口令',),			
+		'total' => array('title' => '总空间',),			
+			'used' => array('title' => '已用',),			
+			'master' => array('title' => '主控',),						
+		'vod_prefix' => array('title' => '点播前缀',),						
+		'download_prefix' => array('title' => '下载前缀',),						
+		'lan_vod_prefix' => array('title' => '内网点播前缀',),						
+		'lan_download_prefix' => array('title' => '内网下载前缀',),						
+		'npath' => array('title' => '节点路径',),			
+		'nmountdir' => array('title' => '节点挂接点',),			
+		'ctime' => array('title' => '创建',),			
+		'ts' => array('title' => '更新',),			
+		'status' => array('title' => '状态'),
+			
+			),	
+		
+		
+
+		/* help_license */
+		't_i18ndb_help_license'=>array(
+			'Name/Email/Mobile'=>'用户名/邮件/手机号',
+			'Please enter a valid email address.'=>'请输入有效电子邮件地址',
+		),
+
+		/* app 应用管理 */
+		'sel_app_language' => array('0'=>'C', '1'=>'PHP', '2'=>'JAVA', '3'=>'JAVASCRIPT', '4'=>'HTML/CSS', '5' =>'SQL'),
+
+		'sel_app_type' => array(
+			'1' => '服务端应用',
+			'2' =>'客户端应用', 
+			'3' =>'WEB应用',			
+			'0' =>'其他',
+			),	
+			
+		'sel_app_vtype' => array('1' =>'完整包', 
+			'2' =>'升级包', 
+			'4' =>'扩展包' , 
+			'5' =>'RC应用扩展', 
+			'6' =>'RC模板扩展', 
+			'7' =>'RC主题扩展','0' =>'其他'),
+		
+			'sel_app_platform' => array('0'=>'LINUX', '1'=>'WINDOWS', '2'=>'ANDROID', '3'=>'MACOS', '4'=>'CRAB', '5'=>'RELAXCMS', '6'=>'x86_32', '7'=>'x86_64'),
+			'sel_app_install' => array('0'=>'默认安装', '1'=>'一键安装', '2'=>'CRAB扩展安装', '3'=>'RC扩展安装', '4'=>'VHOST安装'),
+
+		'mod_app' => array(
+			'modelname'=> '应用库',
+			'id' => array('title' => 'ID'),
+			'title' => array('title' => '标题'),
+			'name' => array('title' => '名称', ),
+			'description' => array('title' => '描述',),
+			'appname' => array('title' => '应用名称',),
+			'version' => array('title' => '版本',),
+			'uuid' => array('title' => 'UUID',),
+			'logo' => array('title' => 'LOGO',),
+			'developer' => array('title' => '开发者',),
+			'language' => array('title' => '语言',),
+			'url' => array('title' => 'URL',),
+			'platform' => array('title' => '平台',),
+			'type' => array('title' => '类型',),
+			'bean' => array('title' => '米豆',),
+			'embeded' => array('title' => '内置',),
+			'uninstall' => array('title' => '可卸载',),
+			'local' => array('title' => '本地',),
+			'remote' => array('title' => '远程',),
+			'rkey' => array('title' => 'RKEY依赖',),
+			'copyright' => array('title' => '版权',),
+			'installed' => array('title' => '安装',),
+			'installdir' => array('title' => '安装目录',),
+			'ts' => array('title' => '最后更新',),
+			'vtype' => array('title' => '版本类型',),
+			'appversion' => array('title' => '扩展应用版本',),
+			'path' => array('title' => '位置',),
+			'peeravid' => array('title' => '对端',),
+			'nextavid' => array('title' => '下一版',),
+		
+			),		
+		
+);

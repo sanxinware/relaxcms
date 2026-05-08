@@ -1,0 +1,32 @@
+<rdoc:include file="head.htm" />
+<style type="text/css">
+.privilege .item {
+	float: left;
+	padding: 5px;
+}
+.permision {
+  padding: 2px 5px 2px 22px;
+  height: 22px;  
+}
+</style>
+<rdoc:include file="edit.htm" />
+<script type="text/javascript">
+jQuery(document).ready(function() {
+
+
+	    $(".privilege2group").on('click', function (e) {
+	           var id = '.'+$(this).attr('id');
+	           if (this.checked) {
+	                $(id).each(function(){
+	                    this.checked = true;
+	                }); 
+	            } else { 
+	                $(id).each(function(){
+	                    this.checked = false;
+	                });
+	            } 
+	    });
+});
+
+</script>
+<rdoc:include file="foot.htm" />			

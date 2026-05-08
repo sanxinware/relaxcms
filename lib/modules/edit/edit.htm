@@ -1,0 +1,32 @@
+
+<div class="form">
+			
+	<div class="form-body">
+	    		
+	    <!--# for($i=0; $i<$nr_field;) { #-->					
+	    <div class="row">
+	        <!--# for($j=0; $j<$columns; $j++) { $v=$fdb[$i++]; #-->
+	        <div class="col-sm-$column_width" id="param_$v[name]_wrapper">    					    
+	            <div class="form-group">
+	                <label class="control-label col-md-2">$v[title] 
+	                <!--# if ($v['required'] == 'true') { #-->
+			<span class="required"> * </span>
+			<!--# } if ($v['comment']) { #-->
+            <span>                            
+                <i class="fa  fa-question-circle  tooltips" 
+                    data-style="default" data-placement="bottom" 
+                    data-container="body" data-original-title="$v[comment]"></i>                            
+            </span>
+           <!--# } #-->
+	                </label>
+	                <div class="col-md-9">  <div class="form-group"> $v[input]</div> </div>
+	            </div>
+	        </div>					        
+	        <!--# if ($i>=$nr_field)break; } #-->					    
+	    </div>
+	    <!--# } #-->
+	</div>
+	
+</div>
+
+
