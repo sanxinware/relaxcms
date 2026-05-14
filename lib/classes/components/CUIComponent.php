@@ -1454,7 +1454,8 @@ class CUIComponent extends CComponent
 		if (!isset($options['default_tdir']))
 			$options['default_tdir'] = $this->_default_tdir;
 		
-		//rlog($options);
+		$options['_dlg'] = $options['dlg'] = $this->requestInt('dlg');
+		
 		
 		$this->initJSCSS($options);	
 		$this->initSbt($options);	

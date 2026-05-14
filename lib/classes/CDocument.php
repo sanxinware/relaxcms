@@ -37,15 +37,19 @@ class CDocument extends CObject
 	public function getDocumentList($appname, &$docmenus=array())
 	{
 		$ddb = array();
-
-		$app = Factory::GetApp($appname);
-		if (!$app) {
-			rlog(RC_LOG_ERROR, __FILE__, __LINE__, __FUNCTION__, "no app '$appname'!");
-			return false;
-		}
-		$appcfg = $app->getAppcfg();		
 		
-		$file = RPATH_APPS.DS.$appname.DS."docs".DS."manual.php";
+		if ($appname != 'root') {
+			$app = Factory::GetApp($appname);
+			if (!$app) {
+				rlog(RC_LOG_ERROR, __FILE__, __LINE__, __FUNCTION__, "no app '$appname'!");
+				return false;
+			}
+			$appcfg = $app->getAppcfg();
+			$file = RPATH_APPS.DS.$appname.DS."docs".DS."manual.php";
+		} else {
+			$file = RPATH_ROOT.DS."docs".DS."manual.php";
+		}
+		
 		if (file_exists($file)) {
 			require $file;
 			if ($docdb) {
@@ -153,7 +157,7 @@ class CDocument extends CObject
 		$pdf = $options['_webroot'].'/'.$params['pdfurl'];
 		$content = str_replace('#pdf', $pdf, $content);
 
-//rlog(RC_LOG_DEBUG, __FILE__, __LINE__, __FUNCTION__, $outFile);
+		//rlog(RC_LOG_DEBUG, __FILE__, __LINE__, __FUNCTION__, $outFile);
 
 		$res = s_write($outFile, $content);	
 		if (!$res) {

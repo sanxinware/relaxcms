@@ -21,7 +21,7 @@ class MsgModule extends CModule
 	
 	protected function show(&$options=array())
 	{
-		$hasMsg = is_model('my_msg');
+		$hasMsg = is_model('msg');
 		if ($hasMsg) {
 			$m = Factory::GetModel('my_msg');		
 			$params = array();

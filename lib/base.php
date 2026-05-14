@@ -140,6 +140,14 @@ class RC
 		@ini_set('upload_max_filesize', '10G');
 		@ini_set('post_max_size', '10G');
 		@ini_set('file_uploads', '50');		
+		/*
+		$open_basedir = ini_get('open_basedir');
+		$tmpdir = sys_get_temp_dir();
+		$open_basedir && $open_basedir .=';';
+		//documentroot		
+		$open_basedir .=  RPATH_ROOT.';'.$_SERVER['DOCUMENT_ROOT'].';'.$tmpdir;		
+		ini_set('open_basedir', $open_basedir);
+		*/
 	}
 	
 	private static function handleLogin($request) 

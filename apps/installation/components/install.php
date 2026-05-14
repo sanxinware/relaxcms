@@ -311,7 +311,7 @@ class InstallComponent extends CUIComponent
 		$dbname = $params['dbname'];
 		$params['dbname'] = "";
 		
-		$create_dbuser = $params['create_dbuser']; 
+		$create_dbuser = intval($params['create_dbuser']); 
 		
 		//是否要创建用户
 		if ($create_dbuser && $params['dbuser'] && $params['dbuser'] != 'root') {

@@ -166,7 +166,7 @@ class CMainApplication extends CApplication
 		
 	public function install($options=array())
 	{
-		rlog(RC_LOG_DEBUG, __FILE__, __LINE__, "IN");
+		//rlog(RC_LOG_DEBUG, __FILE__, __LINE__, "IN");
 		
 		$dir = $this->_appdir;
 				
@@ -200,12 +200,12 @@ class CMainApplication extends CApplication
 		$sql = $dir.DS.'database'.DS.$dbtype.DS."init_table.sql";
 		if (file_exists($sql)) {
 			if (!$db->import($sql)) {
-				rlog(RC_LOG_DEBUG, __FILE__, __LINE__, "call exec_script: '$sql' error.");
+				rlog(RC_LOG_DEBUG, __FILE__, __LINE__, __FUNCTION__, "call exec_script: '$sql' error.");
 			} else {
-				rlog(RC_LOG_DEBUG, __FILE__, __LINE__, "exec_script: '$sql' ok.");
+				rlog(RC_LOG_DEBUG, __FILE__, __LINE__, __FUNCTION__, "exec_script: '$sql' ok.");
 			}
 		} else {
-			rlog(RC_LOG_DEBUG, __FILE__, __LINE__, "no '$sql'");
+			rlog(RC_LOG_DEBUG, __FILE__, __LINE__, __FUNCTION__, "no '$sql'");
 		}
 
 		//update
@@ -213,17 +213,17 @@ class CMainApplication extends CApplication
 			$sql = $dir.DS.'database'.DS.$dbtype.DS."update.sql";
 			if (file_exists($sql)) {
 				if (!$db->import($sql)) {
-					rlog(RC_LOG_DEBUG, __FILE__, __LINE__, "call exec_script: '$sql' error.");
+					rlog(RC_LOG_DEBUG, __FILE__, __LINE__, __FUNCTION__, "call exec_script: '$sql' error.");
 				} else {
-					rlog(RC_LOG_DEBUG, __FILE__, __LINE__, "exec_script: '$sql' ok.");
+					rlog(RC_LOG_DEBUG, __FILE__, __LINE__, __FUNCTION__, "exec_script: '$sql' ok.");
 				}
 			} else {
-				rlog(RC_LOG_DEBUG, __FILE__, __LINE__, "no '$sql'");
+				rlog(RC_LOG_DEBUG, __FILE__, __LINE__, __FUNCTION__, "no '$sql'");
 			}
 			$this->installForUpdate($options);
 		}
 		
-		rlog(RC_LOG_DEBUG, __FILE__, __LINE__, "OUT");
+		//rlog(RC_LOG_DEBUG, __FILE__, __LINE__, "OUT");
 		return true;
 	}
 	

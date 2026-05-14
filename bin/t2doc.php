@@ -46,7 +46,7 @@ if (empty($webroot)) {
 	$webroot="";
 }
 
-rlog(RC_LOG_DEBUG, 'webroot='.$webroot, $tplfile);
+//rlog(RC_LOG_DEBUG, 'webroot='.$webroot, $tplfile);
 
 $m = Factory::GetDocument();
 $ioparams = array();

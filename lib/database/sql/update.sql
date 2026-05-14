@@ -168,5 +168,3 @@ alter table cms_app add path varchar(512) null;
 -- #fixed 20260504
 alter table cms_pub add flags int not null;
 
-
-

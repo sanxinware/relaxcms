@@ -4,12 +4,12 @@ define('DEFAULT_DATABASE_NAME', 'rcdb11');
 
 class CDBConfig extends CConfig
 {
-	protected $_dbtype = 'mysql';
+	protected $_dbtype = 'mysqlpdo';
 
 	public function __construct($name, $options= array())
 	{
 		parent::__construct($name, $options);
-		$this->_dbtype = isset($options['dbtype'])?$options['dbtype']:'mysql';
+		$this->_dbtype = isset($options['dbtype'])?$options['dbtype']:'mysqlpdo';
 	}	
 
 	function CDBConfig($name, $options= array()) 

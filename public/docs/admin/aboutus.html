@@ -118,7 +118,7 @@
                     <!-- BEGIN PAGE HEADER-->
                   
                     <h1 class="page-title"> RelaxCMS简介
-                        <small>版本：0.11.7 / 更新时间：2025.10.21</small>
+                        <small>版本：0.11.7 / 更新时间：2026.05.08</small>
                     </h1>
                     
                     <div class="row">
@@ -161,26 +161,21 @@
 <li><p>RELAXCMS 官网下载</p>
 <pre><code>svn co https://www.relaxcms.com/svn/relaxcms                </code></pre></li>
 <li><p>GITHUB下载</p>
-<pre><code>git clone https://github.com/relaxcms/relaxcms.git</code></pre></li>
+<pre><code>git clone https://github.com/sanxinware/relaxcms.git</code></pre></li>
 </ul>
 <h1 id="在线演示">在线演示</h1>
 <pre><code>    https://demo.relaxcms.com   
     </code></pre>
 <h1 id="安装与更新">安装与更新</h1>
 <h2 id="一键安装">一键安装</h2>
-<p>– 在LINUX环境下一键安装（CRAB+RC），推荐使用Ubuntu 16.04/18.04 Server LTS</p>
-<pre><code>    if [ -f /usr/bin/curl ];then curl -sSLO https://www.relaxcms.com/install/install.sh;else wget -O install.sh https://www.relaxcms.com/install/install.sh;fi;bash install.sh
+<p>– 在LINUX环境下一键安装（CRAB+RC）</p>
+<pre><code>if [ -f /usr/bin/curl ];then curl -o install.sh -sSLO https://www.relaxcms.com/onekeyinstall;else wget -O install.sh https://www.relaxcms.com/onekeyinstall;fi;bash install.sh
     </code></pre>
 <p>– 注：默认安装RelaxCMS官网发布的最新稳定版本</p>
 <h2 id="一键更新">一键更新</h2>
-<p>– 一键更新RC适用于RC已安装好，想把RC升级到更新版本，不跨版本，如0.9.0.0升级0.9.0.123，可以在RC的安装目录下，如：/opt/crab/var/www执行以下一键更新RC命令：</p>
-<pre><code>    if [ -f /usr/bin/curl ];then curl -sSLO https://www.relaxcms.com/install/update.sh;else wget -O update.sh https://www.relaxcms.com/install/update.sh;fi;bash update.sh
+<p>– 一键更新RC适用于RC已安装好，想把RC升级到更新版本，如：从1.0升级1.1：</p>
+<pre><code>    if [ -f /usr/bin/curl ];then curl -o update.sh -sSLO https://www.relaxcms.com/onekeyupdate;else wget -O update.sh https://www.relaxcms.com/onekeyupdate;fi;bash update.sh
     </code></pre>
-<p>– 注：一键更新RC,须在RC部署目录下执行</p>
-<h2 id="一键升级">一键升级</h2>
-<p>– 一键升级RC适用于RC已安装好，想把RC升级到更新版本，可跨版本，如0.9.0.0升级0.10.0.123，可以在RC的安装目录下，如：/opt/crab/var/www执行以下一键升级RC命令：</p>
-<pre><code>    if [ -f /usr/bin/curl ];then curl -sSLO https://www.relaxcms.com/install/upgrade.sh;else wget -O upgrade.sh https://www.relaxcms.com/install/upgrade.sh;fi;bash upgrade.sh</code></pre>
-<p>– 注：一键升级RC,须在RC部署目录下执行 – 注：等同RC的安装目录/opt/crab/var/www/bin下执行: ./upgrade.sh (版本：0.9.0以上)</p>
 <h2 id="下载安装">下载安装</h2>
 <p>– 从RelaxCMS官网下载RelaxCMS 最新版本</p>
 <pre><code>RelaxCMS版本：relaxcms-&lt;VERSION&gt;.tar.gz，下载后，解压安装，./setup.sh命令安装。</code></pre>
@@ -240,7 +235,6 @@
                                             <li><a href="#安装与更新">安装与更新</a><ul>
                                             <li><a href="#一键安装">一键安装</a></li>
                                             <li><a href="#一键更新">一键更新</a></li>
-                                            <li><a href="#一键升级">一键升级</a></li>
                                             <li><a href="#下载安装">下载安装</a></li>
                                             </ul></li>
                                             <li><a href="#源码目录结构说明">源码目录结构说明</a></li>

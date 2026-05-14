@@ -973,6 +973,9 @@ class CApplication extends CObject
 		$parent = $m['name'];
 				
 		foreach ($menus as $key=>$v) {
+			if (empty($v['parent']))
+				continue;
+				
 			if ($v['parent'] != $parent )
 				continue;
 			$mdb[$key] = $v;
@@ -989,7 +992,7 @@ class CApplication extends CObject
 	{
 		$mdb = array();
 		foreach ($menus as $key=>$v) {
-			if ($v['parent'])
+			if (!empty($v['parent']))
 				continue;
 			$mdb[$key] = $v;
 		}		
@@ -1222,6 +1225,7 @@ class CApplication extends CObject
 	{
 		return true;
 	}
+	
 	public function installForUpdate($options=array())
 	{
 		return true;

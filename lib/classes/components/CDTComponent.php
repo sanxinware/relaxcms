@@ -19,7 +19,6 @@ class CDTComponent extends CFileComponent
 	protected function init(&$options=array())
 	{
 		parent::init($options);
-		$options['_dlg'] = $options['dlg'] = $this->requestInt('dlg');
 	}
 	
 	protected function enableMenuItem($midb, $enable=true)

@@ -19,6 +19,52 @@ class CSystemConfig extends CConfig
 		return false;
 	}
 	
+	//$cfg[homedir]为空时被调
+	protected function probHomeDir(&$cfg)
+	{
+		
+		$document_root = $cfg['docrootdir'];
+		$open_basedir = ini_get('open_basedir');
+		//var_dump($open_basedir);exit;
+		
+		if (!empty($open_basedir)) { //自动探测不能进行，默认为
+			//check CRAB
+			$homedir = dirname($document_root);
+			$bdb = explode(';', $open_basedir);
+			foreach ($bdb as $key=>$v) {
+				$path = str_replace(DS, '/', $v);
+				if (($pos = strpos($path, '/crab/')) !== false) {
+					$homedir = substr($path, 0, $pos + 5);
+					break;
+				}
+			}
+			//var_dump($bdb);exit;
+			$cfg['homedir'] = $homedir;			
+		} else {
+			$tdb = explode('/', $document_root);
+			$homedir = $tdb[0];
+			$nr = count($tdb);
+			$found = false;
+			for($i=1; $i<$nr; $i++) {
+				$homedir .= '/'.$tdb[$i];
+				if ((@file_exists($homedir.DS.'bin'.DS.'crabd') || @file_exists($homedir.DS.'bin'.DS.'crabd.exe')) && 
+						is_dir($homedir.DS.'var')) {
+					$found = true;
+					break;
+				}
+			}
+			if (!$found) { //不是默认CRAB部署，可能是VHOST环境部署或其它，借助extension_dir定位，eg:c:/crab/modules
+				$extension_dir = get_cfg_var('extension_dir');
+				$serverdir = dirname($extension_dir);
+				if ((@file_exists($serverdir.DS.'bin'.DS.'crabd') || @file_exists($serverdir.DS.'bin'.DS.'crabd.exe')) && 
+						is_dir($serverdir.DS.'var')) {
+					$homedir = $serverdir;
+				}
+			}						
+			$cfg['homedir'] = $homedir;
+		}
+	}
+	
 	public function load($reload=false)
 	{
 		$cfg = parent::load($reload);
@@ -30,7 +76,7 @@ class CSystemConfig extends CConfig
 		empty($cfg['website']) &&  $cfg['website'] = 'https://www.relaxcms.com';		
 		
 		//db		
-		!isset($cfg['dbtype']) &&  $cfg['dbtype'] = 'mysql';		
+		!isset($cfg['dbtype']) &&  $cfg['dbtype'] = 'mysqlpdo';		
 		
 		!isset($cfg['log_path']) &&  $cfg['log_path'] = str_replace(DS, '/', RPATH_CACHE);
 		!isset($cfg['loglevel']) && $cfg['loglevel'] = LOG_DEBUG;
@@ -90,28 +136,8 @@ class CSystemConfig extends CConfig
 		//DOCUMENT_ROOT
 		$document_root = str_replace(DS, '/', $_SERVER['DOCUMENT_ROOT']);
 		empty($cfg['docrootdir']) && $cfg['docrootdir'] = $document_root;
-		if (empty($cfg['homedir'])) { //探测家目录所在
-			$tdb = explode('/', $document_root);
-			$homedir = $tdb[0];
-			$nr = count($tdb);
-			$found = false;
-			for($i=1; $i<$nr; $i++) {
-				$homedir .= '/'.$tdb[$i];
-				if ((file_exists($homedir.DS.'bin'.DS.'crabd') || file_exists($homedir.DS.'bin'.DS.'crabd.exe')) && 
-						is_dir($homedir.DS.'var')) {
-					$found = true;
-					break;
-				}
-			}
-			if (!$found) { //不是默认CRAB部署，可能是VHOST环境部署或其它，借助extension_dir定位，eg:c:/crab/modules
-				$extension_dir = get_cfg_var('extension_dir');
-				$serverdir = dirname($extension_dir);
-				if ((file_exists($serverdir.DS.'bin'.DS.'crabd') || file_exists($serverdir.DS.'bin'.DS.'crabd.exe')) && 
-						is_dir($serverdir.DS.'var')) {
-					$homedir = $serverdir;
-				}
-			}						
-			$cfg['homedir'] = $homedir;
+		if (empty($cfg['homedir'])) { //探测家目录所在, 引发open_basedir告警
+			$this->probHomeDir($cfg);
 		}
 		$cfg['vardir'] = $cfg['homedir']."/var";
 
