@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html  dir="ltr">
+
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>快速安装</title>
+        <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon">
+        <link rel="apple-touch-icon-precomposed" href="images/apple-touch-icon.png">
+
+        <link href="../../static/css/man.css" rel="stylesheet" >
+        <script src="../../static/js/man.js"></script>
+        
+        <meta name="generator" content="pandoc-man" />
+                <meta name="author" content="版本：0.11.8 / 更新时间：2026-05-14" />
+                        <title>快速安装</title>
+        <style type="text/css">code{white-space: pre;}</style>
+                
+                                        </head>
+
+     <body class="page-header-fixed page-sidebar-fixed  page-sidebar-closed-hide-logo page-container-bg-solid">
+        <!-- BEGIN HEADER -->
+        <div class="page-header navbar navbar-fixed-top">
+            <!-- BEGIN HEADER INNER -->
+            <div class="page-header-inner ">
+                <!-- BEGIN LOGO -->
+                <div class="page-logo">
+                    <a href="index.html">
+                        <img src="../../static/img/logo-default3.png" alt="logo" class="logo-default" /> </a>
+                    <div class="menu-toggler sidebar-toggler">
+                        <!-- DOC: Remove the above "hide" to enable the sidebar toggler button on header -->
+                    </div>
+                </div>
+                <!-- END LOGO -->
+                <!-- BEGIN RESPONSIVE MENU TOGGLER -->
+                <a href="javascript:;" class="menu-toggler responsive-toggler" data-toggle="collapse" data-target=".navbar-collapse"> </a>
+                <!-- END RESPONSIVE MENU TOGGLER -->
+                
+                <!-- BEGIN PAGE TOP -->
+                <div class="page-top">                   
+                    <!-- BEGIN TOP NAVIGATION MENU -->
+                    <div class="top-menu">
+                       
+                    </div>
+                    <!-- END TOP NAVIGATION MENU -->
+                </div>
+                <!-- END PAGE TOP -->
+            </div>
+            <!-- END HEADER INNER -->
+        </div>
+        
+        <!-- BEGIN HEADER & CONTENT DIVIDER -->
+        <div class="clearfix"> </div>
+        <!-- END HEADER & CONTENT DIVIDER -->
+        <!-- BEGIN CONTAINER -->
+        <div class="page-container">
+            <!-- BEGIN SIDEBAR -->
+            <div class="page-sidebar-wrapper">
+                <!-- DOC: Set data-auto-scroll="false" to disable the sidebar from auto scrolling/focusing -->
+                <!-- DOC: Change data-auto-speed="200" to adjust the sub menu slide up/down speed -->
+                <div class="page-sidebar navbar-collapse collapse">
+                    <!--主菜单 -->
+<ul class="page-sidebar-menu  page-header-fixed page-sidebar-menu-compact" data-keep-expanded="true" data-auto-scroll="false" data-slide-speed="200">
+                        
+
+
+<li class="nav-item  ">
+	<a href="javascript:;" class="nav-link nav-toggle">
+	    <i class="icon-info "></i>
+	    <span class="title">关于</span>
+	    <span class="arrow open"></span>
+	</a>
+	
+	<!-- 子菜单 -->
+	<ul class="sub-menu">		
+		
+		<li id="aboutrc" class="nav-item  ">
+	        <a href="/docs/aboutrc.html" class="nav-link "  >
+	        	<i class="icon-item"></i> 
+	            <span class="title">RelaxCMS简介</span>
+	        </a>
+	    </li>
+		
+	</ul>
+</li>
+
+
+<li class="nav-item active open ">
+	<a href="javascript:;" class="nav-link nav-toggle">
+	    <i class="icon-wrench"></i>
+	    <span class="title">安装部署</span>
+	    <span class="arrow open"></span>
+	</a>
+	
+	<!-- 子菜单 -->
+	<ul class="sub-menu">		
+		
+		<li id="install" class="nav-item active open ">
+	        <a href="/docs/install.html" class="nav-link "  >
+	        	<i class="icon-item"></i> 
+	            <span class="title">快速安装</span>
+	        </a>
+	    </li>
+		
+	</ul>
+</li>
+
+
+</ul>
+                </div>
+                <!-- END SIDEBAR -->
+            </div>
+            <!-- END SIDEBAR -->
+            <!-- BEGIN CONTENT -->
+            <div class="page-content-wrapper">
+                <!-- BEGIN CONTENT BODY -->
+                <div class="page-content">
+                    <!-- BEGIN PAGE HEADER-->
+                  
+                    <h1 class="page-title"> 快速安装
+                        <small></small>
+                    </h1>
+                    
+                    <div class="row">
+                        <div class="col-md-10">                           
+                            
+                    		<div class="man-body">
+                    				<h1 id="在线安装">在线安装</h1>
+<p>当前发布的版本支持在线一键安装，要求服务器能访问到<a href="https://www.relaxcms.com">RelaxCMS官网</a>。 把以下命令复制到LINUX的SHELL环境下执行一键安装命令。默认自动检测CRAB运行环境是否安装，如果未安装，则自行先下载安装CRAB运行环境，再安装RelaxCMS框架。</p>
+<pre><code>if [ -f /usr/bin/curl ];then curl -o install.sh -sSLO https://www.relaxcms.com/onekeyinstall;else wget -O install.sh https://www.relaxcms.com/onekeyinstall;fi;bash install.sh
+    </code></pre>
+<ul>
+<li>注1：当前发布的版本仅支持在LINUX的SHELL环境下执行一键安装命令</li>
+<li>注2：默认安装RelaxCMS官网发布的最新稳定版本</li>
+</ul>
+<h1 id="下载安装">下载安装</h1>
+<ul>
+<li><p>安装准备</p>
+<p>安装前准备好RelaxCMS运行所依赖的PHP运行环境，如LAPM、CRAB; 推荐使用<a href="https://crab.relaxcms.com">CRAB</a>搭建服务器环境。</p></li>
+<li><p>下载安装包</p>
+<p>从<a href="https://www.relaxcms.com">RelaxCMS官网</a>下载RelaxCMS所需版本，安装包格式：relaxcms-<VERSION>.tar.gz</p></li>
+<li><p>解压安装包</p>
+<p>解压安装包到已经备好的CRAB/LAPM环境的文档根目录（DocumentRoot)或虚拟主机根目录，CRAB如：/opt/crab/var/www</p></li>
+<li><p>注：CRAB环境下解压后，支持通过./setup.sh命令安装到/opt/crab/var/www</p></li>
+</ul>
+                            </div>
+                            
+                    	</div>
+                        <div class="col-md-2">
+                            <div class="portlet light fixed" style="right:20px;">
+                                <div class="portlet-title">
+                                    <div class="actions">
+                                        
+                                <a href="/docs/install.pdf" class="btn btn-default" > 下载
+                                    <i class="fa fa-file-pdf-o"></i>
+                                </a>
+
+                                    </div>
+                                </div>
+                                <div class="portlet-body">
+                                    <div class="man-sidemenu" >
+                                                                                    <ul>
+                                            <li><a href="#在线安装">在线安装</a></li>
+                                            <li><a href="#下载安装">下载安装</a></li>
+                                            </ul>
+                                                                            </div>
+                                </div>
+                            </div>                    		 
+                    	</div>
+                    </row>
+                    	
+                    </div>
+                </div>
+                <!-- END CONTENT BODY -->
+            </div>
+            <!-- END CONTENT -->
+
+        </div>
+        <!-- END CONTAINER -->
+        <!-- BEGIN FOOTER -->
+        <div class="page-footer">
+            <div class="page-footer-inner"> 2024 &copy; <a href="https://www.relaxcms.com" target="_blank">RC</a>
+                <div class="scroll-to-top">
+                    <i class="icon-arrow-up"></i>
+                </div>
+        </div>
+                <!-- END FOOTER -->
+    <script lang="javascript">
+        jQuery(document).ready(function(){
+            jQuery('pre').addClass('prettyprint')
+            prettyPrint();
+
+        });
+    </script>
+    </body>
+</html>
